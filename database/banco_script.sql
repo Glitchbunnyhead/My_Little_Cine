@@ -1,0 +1,131 @@
+CREATE DATABASE WEBSITE_CINEMA;
+USE WEBSITE_CINEMA;
+
+CREATE TABLE Usuario (
+id_usuario BIGINT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,
+senha VARCHAR(20) NOT NULL,
+cpf CHAR(11) UNIQUE NOT NULL,
+data_nascimento DATE NOT NULL,
+tipo VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Filme (
+id_filme BIGINT PRIMARY KEY AUTO_INCREMENT,
+titulo VARCHAR(100) NOT NULL,
+sinopse TEXT NOT NULL,
+ano_lancamento YEAR NOT NULL,
+duracao_minutos INT NOT NULL,
+classificacao_etaria VARCHAR(5) NOT NULL, CHECK (classificacao_etaria IN ('12', '14', '16', '18', 'LIVRE'))
+);
+
+CREATE TABLE Idioma (
+id_idioma BIGINT PRIMARY KEY AUTO_INCREMENT,
+idioma VARCHAR(50) UNIQUE NOT NULL,
+sigla VARCHAR(10) UNIQUE NOT NULL
+);
+
+CREATE TABLE Sala (
+id_sala BIGINT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100) UNIQUE NOT NULL,
+capacidade INT NOT NULL,
+tipo VARCHAR(25) NOT NULL
+);
+
+CREATE TABLE CategoriaProduto (
+id_categoria BIGINT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(50) UNIQUE NOT NULL,
+descricao TEXT
+);
+
+CREATE TABLE Produto (
+id_produto BIGINT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100) UNIQUE NOT NULL,
+descricao TEXT,
+preco DECIMAL(10, 2) NOT NULL,
+quant_estoque INT UNSIGNED NOT NULL DEFAULT 0,
+status VARCHAR(20) NOT NULL DEFAULT 'com estoque',
+id_categoria BIGINT NOT NULL,
+FOREIGN KEY (id_categoria) REFERENCES CategoriaProduto(id_categoria)
+ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+CREATE TABLE Assento (
+id_assento BIGINT PRIMARY KEY AUTO_INCREMENT,
+fileira VARCHAR(5) NOT NULL,
+numero INT NOT NULL,
+tipo VARCHAR(30) NOT NULL DEFAULT 'comum',
+id_sala BIGINT NOT NULL,
+UNIQUE (id_sala, fileira, numero),
+FOREIGN KEY (id_sala) REFERENCES Sala(id_sala)
+ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+CREATE TABLE Sessao (
+id_sessao BIGINT AUTO_INCREMENT PRIMARY KEY,
+data DATE NOT NULL,
+horario TIME NOT NULL,
+tipo VARCHAR(40) NOT NULL,
+preco DECIMAL(10,2) NOT NULL,
+status VARCHAR(20) NOT NULL DEFAULT 'em exibição',
+id_filme BIGINT NOT NULL,
+id_idioma BIGINT NOT NULL,
+id_sala BIGINT NOT NULL,
+
+FOREIGN KEY (id_filme) REFERENCES Filme(id_filme),
+FOREIGN KEY (id_idioma) REFERENCES Idioma(id_idioma),
+FOREIGN KEY (id_sala) REFERENCES Sala(id_sala)
+);
+
+CREATE TABLE Ingresso (
+id_ingresso BIGINT AUTO_INCREMENT PRIMARY KEY,
+tipo VARCHAR(40) NOT NULL,
+preco DECIMAL(10,2) NOT NULL,
+status VARCHAR(20) NOT NULL DEFAULT 'disponivel',
+id_sessao BIGINT NOT NULL,
+id_assento BIGINT NOT NULL,
+
+UNIQUE (id_sessao, id_assento),
+FOREIGN KEY (id_sessao) REFERENCES Sessao(id_sessao),
+FOREIGN KEY (id_assento) REFERENCES Assento(id_assento)
+);
+
+CREATE TABLE Venda (
+id_venda BIGINT PRIMARY KEY AUTO_INCREMENT,
+valor_total DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+forma_pagamento VARCHAR(30) NOT NULL,
+status VARCHAR(20) NOT NULL DEFAULT 'pendente',
+data_venda DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+id_usuario BIGINT NOT NULL,
+
+FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+CREATE TABLE Item_Venda (
+id_item BIGINT PRIMARY KEY AUTO_INCREMENT,
+quantidade INT UNSIGNED NOT NULL,
+preco_unitario DECIMAL(10,2) NOT NULL,
+subtotal DECIMAL(10,2) NOT NULL,
+id_venda BIGINT NOT NULL,
+id_ingresso BIGINT,
+id_produto BIGINT, CHECK ((id_produto IS NOT NULL AND id_ingresso IS NULL) OR (id_produto IS NULL AND id_ingresso IS NOT NULL)),
+FOREIGN KEY (id_venda) REFERENCES Venda(id_venda)
+ON UPDATE CASCADE ON DELETE RESTRICT,
+
+FOREIGN KEY (id_produto) REFERENCES Produto(id_produto),
+FOREIGN KEY (id_ingresso) REFERENCES Ingresso(id_ingresso)
+);
+
+CREATE TABLE Filme_Idioma (
+id_filme BIGINT NOT NULL,
+id_idioma BIGINT NOT NULL,
+PRIMARY KEY (id_filme, id_idioma),
+
+FOREIGN KEY (id_filme) REFERENCES Filme(id_filme)
+ON UPDATE CASCADE ON DELETE RESTRICT,
+
+FOREIGN KEY (id_idioma) REFERENCES Idioma(id_idioma)
+ON UPDATE CASCADE ON DELETE RESTRICT
+);

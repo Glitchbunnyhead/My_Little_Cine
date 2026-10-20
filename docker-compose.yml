@@ -1,0 +1,32 @@
+#IGNORAR CASO NÃO ESTEJAM USANDO DOCKER
+version: '3.8'
+
+services:
+  # Servidor Web + PHP (com extensões para MySQL)
+  web:
+    image: php:8.2-apache
+    container_name: php_app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    # Comando para habilitar mysqli e pdo_mysql no Apache antes de iniciar
+    command: >
+      bash -c "docker-php-ext-install mysqli pdo_mysql && apache2-foreground"
+    depends_on:
+      - db
+
+  # Banco de Dados MySQL
+  db:
+    image: mysql:8.0
+    container_name: php_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sistema_login
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
