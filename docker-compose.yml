@@ -22,7 +22,7 @@ services:
     container_name: php_db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: sistema_login
+      MYSQL_DATABASE: WEBSITE_CINEMA
     ports:
       - "3306:3306"
     volumes:
