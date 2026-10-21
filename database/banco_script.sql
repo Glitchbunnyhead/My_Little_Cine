@@ -17,7 +17,8 @@ titulo VARCHAR(100) NOT NULL,
 sinopse TEXT NOT NULL,
 ano_lancamento YEAR NOT NULL,
 duracao_minutos INT NOT NULL,
-classificacao_etaria VARCHAR(5) NOT NULL, CHECK (classificacao_etaria IN ('12', '14', '16', '18', 'LIVRE'))
+classificacao_etaria VARCHAR(5) NOT NULL, CHECK (classificacao_etaria IN ('12', '14', '16', '18', 'LIVRE')),
+poster TEXT NOT NULL
 );
 
 CREATE TABLE Idioma (
@@ -46,6 +47,7 @@ descricao TEXT,
 preco DECIMAL(10, 2) NOT NULL,
 quant_estoque INT UNSIGNED NOT NULL DEFAULT 0,
 status VARCHAR(20) NOT NULL DEFAULT 'com estoque',
+foto TEXT NOT NULL,
 id_categoria BIGINT NOT NULL,
 FOREIGN KEY (id_categoria) REFERENCES CategoriaProduto(id_categoria)
 ON UPDATE CASCADE ON DELETE RESTRICT
