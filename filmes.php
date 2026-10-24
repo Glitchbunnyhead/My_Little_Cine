@@ -31,7 +31,7 @@
     <header>
         <h2 class="nav-titulo">My Little Cine</h2>
         <nav class="nav-container">
-            <a href="#" class="nav-logo">
+            <a href="index_usuario.php" class="nav-logo">
                 <img src="imagens/home_icone.png" alt="Logo">
             </a>
             <?php if ($_SESSION["tipo"] == "admin"): ?>
@@ -60,9 +60,8 @@
                                     <span>Ano: <?php echo $filme['ano_lancamento']; ?></span> | 
                                     <span>Duração: <?php echo $filme['duracao_minutos']; ?> min</span>
                                 </p>
-                                <p class="filme-sinopse"><strong>Sinopse:</strong> <?php echo htmlspecialchars($filme['sinopse'] ?? ''); ?></p>
                                 <div class="filme-acoes">
-                                    <a href="sessao.php?id=<?php echo $filme['id'] ?? 0; ?>" class="btn-comprar">Comprar Ingressos</a>
+                                   <a href="sessao.php?id=<?php echo $filme['id_filme']; ?>" class = "btn-comprar">Comprar Ingressos</a>
                                 </div>
                             </div>
                         </div>

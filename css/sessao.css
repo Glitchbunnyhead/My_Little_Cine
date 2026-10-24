@@ -1,0 +1,160 @@
+@import "variaveis.css";
+@import "estilo.css";/* =========================================
+   ESTILO ESPECÍFICO - PÁGINA DE SESSÕES
+   ========================================= */
+
+main {
+    max-width: 900px;
+    margin: var(--espacamento-8) auto;
+    padding: 0 var(--espacamento-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-8);
+}
+
+/* =========================================
+   CARD DE DETALHES DO FILME (TOPO)
+   ========================================= */
+.filme-card-item {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-6);
+    display: flex;
+    gap: var(--espacamento-6);
+    align-items: flex-start;
+    box-shadow: var(--sombra-md);
+}
+
+.filme-poster {
+    width: 160px;
+    height: 230px;
+    object-fit: cover;
+    border: 2px solid var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    flex-shrink: 0;
+}
+
+.filmes-sessoes h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    margin-bottom: var(--espacamento-3);
+}
+
+.filme-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-3);
+    flex-grow: 1;
+}
+
+.filme-meta {
+    font-size: var(--texto-sm);
+    color: var(--cor-primaria-clara);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-2);
+}
+
+.badge-classificacao {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-secundaria);
+    padding: 2px 6px;
+    border-radius: var(--raio-sm);
+    font-weight: bold;
+    border: 1px solid var(--cor-primaria);
+    font-size: var(--texto-xs);
+    display: inline-block;
+    width: fit-content;
+}
+
+/* =========================================
+   SEÇÃO DE SESSÕES DISPONÍVEIS
+   ========================================= */
+.sessoes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4);
+}
+
+.sessoes > h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-xl);
+    color: var(--cor-secundaria);
+    border-bottom: 2px dashed var(--cor-primaria);
+    padding-bottom: var(--espacamento-2);
+}
+
+ h1 {
+    color: var(--cor-secundaria);
+}
+
+.sessoes-opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4);
+}
+
+/* Item individual de sessão */
+.sessao-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 2px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-4);
+    box-shadow: var(--sombra-sm);
+    transition: var(--transicao);
+}
+
+.sessao-item:hover {
+    border-color: var(--cor-secundaria);
+    box-shadow: 2px 2px 0px var(--cor-primaria);
+}
+
+.sessao-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espacamento-4);
+}
+
+.sessao-info h3 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-lg);
+    color: var(--cor-secundaria-clara);
+}
+
+.sessao-info p {
+    font-size: var(--texto-sm);
+    color: var(--cor-texto);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Botão de Comprar Ingresso na Sessão */
+.sessoes-acoes .btn-comprar {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: var(--espacamento-2) var(--espacamento-4);
+    border-radius: var(--raio-sm);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: var(--texto-sm);
+    border: 2px solid var(--cor-primaria-clara);
+    transition: var(--transicao);
+    box-shadow: 2px 2px 0px var(--cor-primaria-escura);
+}
+
+.sessoes-acoes .btn-comprar:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+    border-color: var(--cor-secundaria-clara);
+}
+
+.sessoes-acoes .btn-comprar:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}

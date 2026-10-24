@@ -99,7 +99,7 @@ section {
     padding-bottom: var(--espacamento-2);
 }
 
-section h2 {
+section h2{
     font-size: var(--texto-2xl);
     color: var(--cor-secundaria);
 }
