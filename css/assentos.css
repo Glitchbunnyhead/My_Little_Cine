@@ -1,0 +1,38 @@
+.grid-assentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--espacamento-3);
+    margin: var(--espacamento-4) 0;
+}
+
+.assento-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--cor-primaria);
+    border-radius: var(--raio-sm);
+    padding: var(--espacamento-2);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transicao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Quando o usuário passa o mouse ou seleciona */
+.assento-box:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+/* Se a cadeira estiver ocupada (desativada) */
+.assento-box.ocupado {
+    background-color: #333;
+    border-color: #555;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.assento-box input[type="checkbox"] {
+    accent-color: var(--cor-secundaria);
+}
