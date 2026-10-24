@@ -82,7 +82,7 @@
                                 | preço : <?php echo htmlspecialchars($sessao['preco'] ?? ''); ?> <br>
                             </p>
                             <div class="sessoes-acoes">
-                               <!-- <a href="assentos.php?id=<?php echo $filme['id_filme']; ?>" class = "btn-comprar">Comprar Ingressos</a> -->
+                               <a href="assentos.php?id=<?php echo $sessao['id_sala']; ?>" class = "btn-comprar">Reservar Assentos</a> 
                             </div>
                         </div>
                     </div>

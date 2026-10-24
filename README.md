@@ -1,1 +1,2 @@
-# filmes->sessao->assentos->->produtos->venda
+# filmes->sessao->assentos->processar_reserva->produtos->venda
+# ajeitar o processar_reserva para que ele coloque as poltronas em um estado de reservado antes de por ocupado, para que duas pessoas fazendo um registro na mesma hora não bugue o sistema
