@@ -8,11 +8,11 @@
     $resultadoFilmes = $stmtFilmes->get_result();
     $filmes = $resultadoFilmes->fetch_all(MYSQLI_ASSOC);
 
-    $sqlSnacks = "SELECT * FROM Produto";
-    $stmtSnacks = $conn->prepare($sqlSnacks);
-    $stmtSnacks->execute();
-    $resultadoSnacks = $stmtSnacks->get_result();
-    $snacks = $resultadoSnacks->fetch_all(MYSQLI_ASSOC);
+    $sqlprodutos = "SELECT * FROM Produto";
+    $stmtprodutos = $conn->prepare($sqlprodutos);
+    $stmtprodutos->execute();
+    $resultadoprodutos = $stmtprodutos->get_result();
+    $produtos = $resultadoprodutos->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,26 +26,26 @@
 </head>
 <body>
     <header>
-        <h2 class="nav__titulo">My Little Cine</h2>
+        <h2 class="nav_titulo">My Little Cine</h2>
         <nav class="nav_container">
             <a href="#" class="nav__logo">
                 <img src="imagens/home_icone.png" alt="Logo">
             </a>
-            <?php if (isset($_SESSION["usuario_id"])): ?>
-                <a href="perfil.php" class="nav__link">Meu Perfil</a>
-                <a href="em_cartaz.php" class="nav__link">Em Cartaz</a>
-                <a href="snacks.php" class="nav__link">SnackBar</a>
-                <a href="sair.php" class="nav__link">Logout</a>
+            <?php if (isset($_SESSION["usuario"])): ?>
+                <a href="perfil.php" class="nav_link">Meu Perfil</a>
+                <a href="filmes.php" class="nav_link">Em Cartaz</a>
+                <a href="produtos.php" class="nav_link">SnackBar</a>
+                <a href="sair.php" class="nav_link">Logout</a>
 
                 <?php if ($_SESSION["usuario_tipo"] == "admin"): ?>
-                    <a href="admin.php" class="nav__link">Administração</a>
+                    <a href="admin.php" class="nav_link">Administração</a>
                 <?php endif; ?>
 
             <?php else: ?>
-                <a href="login.php" class="nav__link">Login</a>
-                <a href="cadastro.php" class="nav__link">Cadastro</a>
+                <a href="login.php" class="nav_link">Login</a>
+                <a href="cadastro.php" class="nav_link">Cadastro</a>
             <?php endif; ?>
-            <a href="sobre.php" class="nav__link">Sobre</a>
+            <a href="sobre.php" class="nav_link">Sobre</a>
         </nav>
     </header>
 
@@ -62,7 +62,7 @@
             <div class="em__cartaz__content">
                 <h2>Em Cartaz</h2>
                 <p>Confira os filmes que estão em cartaz no momento!</p>
-                <a href="em_cartaz.php" class="em__cartaz__link">Veja os filmes</a>
+                <a href="filmes.php" class="em__cartaz__link">Veja os filmes</a>
             </div>
 
             <!-- Container do Carrossel de Filmes -->
@@ -83,22 +83,22 @@
             </div>
         </section>
 
-        <section class="snacks">
-            <div class="snacks__content">
-                <h2>Snacks e Bebidas</h2>
-                <p>Deliciosos snacks e bebidas para acompanhar seu filme!</p>
-                <a href="snacks.php" class="snacks__link">Confira nosso cardápio</a>
+        <section class="produtos">
+            <div class="produtos__content">
+                <h2>produtos e Bebidas</h2>
+                <p>Deliciosos produtos e bebidas para acompanhar seu filme!</p>
+                <a href="produtos.php" class="produtos__link">Confira nosso cardápio</a>
             </div>
 
-            <!-- Container do Carrossel de Snacks -->
-            <div class="carrossel_snacks">
-               <?php if (count($snacks) > 0): ?>
-                    <?php foreach ($snacks as $snack): ?>
-                        <div class="card-snack">
-                            <div class="snack-info">
-                                <h3><?php echo htmlspecialchars($snack['nome']); ?></h3>
-                                <img src="<?php echo htmlspecialchars($snack['foto']); ?>" alt="Foto do snack">
-                                <p><?php echo htmlspecialchars($snack['descricao']); ?> R$ <?php echo number_format($snack['preco'], 2, ',', '.'); ?></p>
+            <!-- Container do Carrossel de produtos -->
+            <div class="carrossel_produtos">
+               <?php if (count($produtos) > 0): ?>
+                    <?php foreach ($produtos as $snack): ?>
+                        <div class="card-produtos">
+                            <div class="produtos-info">
+                                <h3><?php echo htmlspecialchars($produtos['nome']); ?></h3>
+                                <img src="<?php echo htmlspecialchars($produtos['foto']); ?>" alt="Foto do produtos">
+                                <p><?php echo htmlspecialchars($produtos['descricao']); ?> R$ <?php echo number_format($produtos['preco'], 2, ',', '.'); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>

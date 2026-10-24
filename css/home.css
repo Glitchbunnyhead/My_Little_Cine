@@ -27,7 +27,7 @@ header {
     z-index: 100;
 }
 
-.nav__titulo {
+.nav_titulo {
     color: var(--cor-texto);
     font-size: 24px;
     font-weight: 800;
@@ -42,7 +42,7 @@ header {
     list-style: none;
 }
 
-.nav__link {
+.nav_link {
     color: var(--cor-texto);
     text-decoration: none;
     font-size: 15px;
@@ -83,27 +83,27 @@ header {
 }
 
 /* ==========================================================================
-   4. SEÇÃO DO CARROSSEL DE FILMES E SNACKS
+   4. SEÇÃO DO CARROSSEL DE FILMES E produtosS
    ========================================================================== */
-.em__cartaz, .snacks {
+.filmes, .produtoss {
     padding: 30px 40px;
     max-width: 1300px;
     margin: 0 auto;
 }
 
-.em__cartaz__content h2, .snacks__content h2 {
+.filmes__content h2, .produtoss__content h2 {
     font-size: 22px;
     margin-bottom: 10px;
     border-left: 4px solid var(--cor-primaria, #e50914);
     padding-left: 10px;
 }
 
-.em__cartaz__content p, .snacks__content p {
+.filmes__content p, .produtoss__content p {
     color: var(--text-muted, #b3b3b3);
     margin-bottom: 15px;
 }
 
-.em__cartaz__link, .snacks__link {
+.filmes__link, .produtoss__link {
     display: inline-block;
     color: var(--cor-primaria, #e50914);
     text-decoration: none;
@@ -111,7 +111,7 @@ header {
     font-weight: 600;
 }
 
-.carrossel__filmes, .carrossel_snacks {
+.carrossel__filmes, .carrossel_produtoss {
     width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -121,13 +121,13 @@ header {
 }
 
 .carrossel__filmes::-webkit-scrollbar-track,
-.carrossel_snacks::-webkit-scrollbar-track {
+.carrossel_produtoss::-webkit-scrollbar-track {
     background: var(--bg-card, #1f1f1f);
     border-radius: 4px;
 }
 
 .carrossel__filmes::-webkit-scrollbar-thumb,
-.carrossel_snacks::-webkit-scrollbar-thumb {
+.carrossel_produtoss::-webkit-scrollbar-thumb {
     background: var(--cor-primaria, #e50914);
     border-radius: 4px;
 }
@@ -173,7 +173,7 @@ header {
     color: var(--text-muted, #b3b3b3);
 }
 
-.card-snack {
+.card-produtos {
     flex: 0 0 200px;
     background-color: var(--bg-card, #1f1f1f);
     border-radius: 8px;
@@ -186,7 +186,7 @@ header {
     justify-content: space-between;
 }
 
-.snack-info img {
+.produtos-info img {
     width: 100%;
     height: 150px;
     object-fit: cover;
@@ -194,16 +194,16 @@ header {
     margin: 10px 0;
 }
 
-.snack-info h3 {
+.produtos-info h3 {
     font-size: 15px;
 }
 
-.snack-info p {
+.produtos-info p {
     font-size: 13px;
     color: var(--text-muted, #b3b3b3);
 }
 
-.card-snack:hover {
+.card-produtos:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 20px var(--cor-primaria);
 }

@@ -26,7 +26,7 @@ if ($resultado -> num_rows == 1) {
 
     $_SESSION['usuario'] = $usuario;
    
-    header("Location: admin/produtos.php");
+    header("Location: index_usuario.php");
     exit;
 
 } else {
