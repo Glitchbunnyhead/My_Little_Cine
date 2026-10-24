@@ -2,7 +2,7 @@
     session_start();
     require_once "conexao/conexao.php";
 
-    $sqlFilmes = "SELECT * FROM Filme;";
+    $sqlFilmes = "SELECT * FROM Filme ;";
     $stmtFilmes = $conn->prepare($sqlFilmes);
     $stmtFilmes->execute();
     $resultadoFilmes = $stmtFilmes->get_result();
@@ -19,14 +19,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imagens/home_icone.png">
+    <link rel="icon" href="imagens/home_icone.png" type="image/png">
     <!-- Importando fonte -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/variaveis.css">
     <link rel="stylesheet" href="css/estilo.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/index_usuario.css" type="text/css" media="all">
+
     <title>My Little Cine</title>
 </head>
 <body>
@@ -114,7 +117,7 @@
 
     <footer>
         <img src="imagens/home_icone.png" alt="Icone">
-        <p>© 2025 IFSUL MY LITTLE CINE</p>
+        <p>© 2026 IFSUL MY LITTLE CINE</p>
         <a href="https://github.com/Glitchbunnyhead/My_Little_Cine" target="_blank">GitHub</a>
     </footer>
 </body>
