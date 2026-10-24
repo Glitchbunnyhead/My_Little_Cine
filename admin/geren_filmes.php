@@ -29,13 +29,28 @@ if (!$usuario_logado || $usuario_logado["tipo"] !== "admin") {
 }
 
 $mensagem = "";
+
+if (isset($_GET["cadastro"]) && $_GET["cadastro"] === "sucesso") {
+    $mensagem = "Filme cadastrado com sucesso!";
+}
+
+if (isset($_GET["exclusao"]) && $_GET["exclusao"] === "sucesso") {
+    $mensagem = "Filme excluído com sucesso!";
+}
+
 $filme_edicao = null;
 
 //cadastrar ou editar
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    // echo "O PHP recebeu o formulário!";
+    // echo "<br>Ação recebida: " . ($_POST["acao"] ?? "nenhuma");
+    // exit;
+
     $acao = $_POST["acao"] ?? "";
 
     if ($acao == "cadastrar" || $acao == "editar") {
+
         $titulo = trim($_POST["titulo"] ?? "");
         $sinopse = trim($_POST["sinopse"] ?? "");
         $ano = (int) ($_POST["ano_lancamento"] ?? 0);
@@ -43,14 +58,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $classificacao = ($_POST["classificacao_etaria"] ?? "");
         $poster = trim($_POST["poster"] ?? "");
 
-        $classificacoes_validas = ["Livre", "12", "14", "16", "18"];
+
+        $classificacoes_validas = ["LIVRE", "12", "14", "16", "18"];
 
         if (
             $titulo == "" ||
             $sinopse == "" ||
             $ano <= 0 ||
             $duracao <= 0 ||
-            !in_array($classificacao, $classificacoes_validas) || $poster == ""
+            !in_array($classificacao, $classificacoes_validas, true) || $poster == ""
         ) {
 
             $mensagem = "Todos os campos são obrigatórios e devem ser válidos.";
@@ -61,15 +77,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 $stmt = mysqli_prepare($conn, $sql);
 
+                if (!$stmt) {
+                    die("Erro ao preparar SQL: " . mysqli_error($conn));
+                }
+
                 mysqli_stmt_bind_param($stmt, "ssiiss", $titulo, $sinopse, $ano, $duracao, $classificacao, $poster);
 
                 if (mysqli_stmt_execute($stmt)) {
-                    $mensagem = "Filme cadastrado com sucesso!";
+                    mysqli_stmt_close($stmt);
+
+                    header("Location: geren_filmes.php?cadastro=sucesso");
+                    exit;
+
                 } else {
-                    $mensagem = "Erro ao cadastrar filme: " . mysqli_error($conn);
+                    $mensagem = "Erro ao cadastrar filme: " . mysqli_stmt_error($stmt);
                 }
 
                 mysqli_stmt_close($stmt);
+
             } else {
                 $id_filme = (int) ($_POST["id_filme"] ?? 0);
 
@@ -80,7 +105,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 mysqli_stmt_bind_param($stmt, "ssiissi", $titulo, $sinopse, $ano, $duracao, $classificacao, $poster, $id_filme);
 
                 if (mysqli_stmt_execute($stmt)) {
-                    $mensagem = "Filme atualizado com sucesso!";
+                    mysqli_stmt_close($stmt);
+
+                    // $mensagem = "Filme atualizado com sucesso!";
+
+                    header("Location: geren_filmes.php?cadastro=sucesso");
+                    exit;
+
                 } else {
                     $mensagem = "Erro ao atualizar filme: " . mysqli_error($conn);
                 }
@@ -88,24 +119,47 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
         }
 
-        //excluir
+        
     }
+
+    //excluir
     if ($acao == "excluir") {
         $id_filme = (int) ($_POST["id_filme"] ?? 0);
 
-        $sql = "DELETE FROM Filme WHERE id_filme = ?";
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "i", $id_filme);
+        if($id_filme > 0) {
+            $sql = "DELETE FROM Filme WHERE id_filme = ?";
+            $stmt = mysqli_prepare($conn, $sql);
 
-        if (mysqli_stmt_execute($stmt)) {
-            $mensagem = "Filme excluído com sucesso!";
+            if(!$stmt) {
+                die("Erro ao preparar SQL: " . mysqli_error($conn));
+            } else {
+                mysqli_stmt_bind_param($stmt, "i", $id_filme);
+
+                if (mysqli_stmt_execute($stmt)) {
+                    if(mysqli_stmt_affected_rows($stmt) > 0) {
+
+                        mysqli_stmt_close($stmt);
+                        header("Location: geren_filmes.php?exclusao=sucesso");
+                        exit;
+                        
+                    } else {
+                        $mensagem = "Nenhum filme encontrado com esse id.";
+                    }
+                } else {
+                    $mensagem = "Erro ao excluir filme: " . mysqli_stmt_error($stmt);
+                }
+
+                mysqli_stmt_close($stmt);
+
+            }
+
         } else {
-            $mensagem = "Erro ao excluir filme: " . mysqli_error($conn);
+             $mensagem = "id do filme invalido";
         }
-
-        mysqli_stmt_close($stmt);
     }
 }
+
+
 
 //carregar filme para edicao
 if (isset($_GET["editar"])) {
@@ -203,6 +257,7 @@ $resultado = mysqli_query($conn, $sql);
 
                         <input type="number"
                             id="ano_lancamento"
+                            name="ano_lancamento"
                             value="<?php echo htmlspecialchars((string) ($filme_edicao["ano_lancamento"] ?? "")); ?>"
                             required>
                     </div>
@@ -212,15 +267,16 @@ $resultado = mysqli_query($conn, $sql);
 
                         <input type="number"
                             id="duracao_minutos"
+                            name="duracao_minutos"
                             min="1"
                             value="<?php echo htmlspecialchars((string) ($filme_edicao["duracao_minutos"] ?? "")); ?>"
                             required>
                     </div>
 
                     <div class="formulario_grupo">
-                        <label for="classificacao">Classificação etária:</label>
+                        <label for="classificacao_etaria">Classificação etária:</label>
 
-                        <select name="classificacao" id="classificacao" required>
+                        <select name="classificacao_etaria" id="classificacao_etaria" required>
 
                             <?php
                             $classificacao = $filme_edicao["classificacao_etaria"] ?? "";
@@ -247,7 +303,7 @@ $resultado = mysqli_query($conn, $sql);
                         <input type="url"
                         id="poster"
                         name="poster"
-                        value="<?php htmlspecialchars($filme_edicao["poster"] ?? ""); ?>"
+                        value="<?php echo htmlspecialchars($filme_edicao["poster"] ?? ""); ?>"
                         required>
                     </div>
 
@@ -293,7 +349,7 @@ $resultado = mysqli_query($conn, $sql);
                                         <td><?php echo htmlspecialchars($filme["titulo"]); ?></td>
                                         <td><?php echo htmlspecialchars((string) ($filme["ano_lancamento"])); ?></td>
 
-                                        <td><?php echo (int)($filme["duracao"]); ?> min</td>
+                                        <td><?php echo (int)($filme["duracao_minutos"]); ?> min</td>
 
                                         <td><?php echo htmlspecialchars($filme["classificacao_etaria"]); ?></td>
 
@@ -304,8 +360,10 @@ $resultado = mysqli_query($conn, $sql);
                                             Editar
                                             </a>
 
-                                            <form action="geren_filme.php" method="POST"
+                                            <form action="geren_filmes.php" method="POST"
                                             onsubmit="return confirm('Tem certeza que deseja excluir esse filme?'); ">
+
+                                                <input type="hidden" name="acao" value="excluir">
 
                                                 <input type="hidden" name="id_filme" value="<?php echo (int) $filme["id_filme"]; ?>">
 

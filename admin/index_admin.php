@@ -13,7 +13,7 @@
 
         <nav class="nav_container">
 
-            <a href="index_usuario.php" class="nav_link">Página Inicial</a>
+            <a href="../index_usuario.php" class="nav_link">Página Inicial</a>
 
         </nav>
     </header>
