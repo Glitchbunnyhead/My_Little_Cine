@@ -84,14 +84,6 @@
     font-size: var(--texto-xs);
 }
 
-/* Sinopse */
-.filme-sinopse {
-    font-size: var(--texto-sm);
-    color: var(--cor-texto);
-    line-height: 1.4;
-    margin-top: var(--espacamento-1);
-}
-
 /* Botão de Ação alinhado igual na referência */
 .filme-acoes {
     margin-top: var(--espacamento-3);
