@@ -25,13 +25,25 @@ if ($resultado -> num_rows == 1) {
     $usuario = $resultado -> fetch_assoc();
 
     $_SESSION['usuario'] = $usuario;
+    $_SESSION['id_usuario'] = $usuario['id_usuario'];
+    $_SESSION['nome'] = $usuario['nome'];
+    $_SESSION['email'] = $usuario['email'];
+    $_SESSION['senha'] = $usuario['senha'];
+    $_SESSION['cpf'] = $usuario['cpf'];
+    $_SESSION['data_nascimento'] = $usuario['data_nascimento'];
+    $_SESSION['tipo'] = $usuario['tipo'];
+    
+    
    
     header("Location: index_usuario.php");
+
     exit;
+    
 
 } else {
     header("Location: login.php?erro=credenciais");
     exit;
 }
+
 
 ?>
