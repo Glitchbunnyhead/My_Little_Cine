@@ -8,7 +8,7 @@ if(!isset($_SESSION['usuario'])) {
 
 include_once('conexao/conexao.php');
 
-$id_usuario = $_SESSION['usuario'];
+$id_usuario = $_SESSION['id_usuario'];
 
 $sql = "SELECT * FROM Usuario WHERE id_usuario = ?";
 
@@ -91,5 +91,10 @@ mysqli_stmt_close($stmt);
         </section>
     </main>
     
+    <footer>
+        <img src="imagens/home_icone.png" alt="Icone">
+        <p>© 2025 IFSUL MY LITTLE CINE</p>
+        <a href="https://github.com/Glitchbunnyhead/My_Little_Cine" target="_blank">GitHub</a>
+    </footer>
 </body>
 </html>

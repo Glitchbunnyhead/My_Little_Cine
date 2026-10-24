@@ -33,7 +33,6 @@ if ($resultado -> num_rows == 1) {
     $_SESSION['data_nascimento'] = $usuario['data_nascimento'];
     $_SESSION['tipo'] = $usuario['tipo'];
     
-    
    
     header("Location: index_usuario.php");
 

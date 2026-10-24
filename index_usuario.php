@@ -45,7 +45,7 @@
                 <a href="logout.php" class="nav-link">Logout</a>
 
                 <?php if ($_SESSION["tipo"] == "admin"): ?>
-                    <a href="index_admin.php" class="nav-link btn">Administração</a>
+                    <a href="admin/index_admin.php" class="nav-link btn">Administração</a>
                 <?php endif; ?>
 
             <?php else: ?>

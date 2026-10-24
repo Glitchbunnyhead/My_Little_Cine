@@ -109,7 +109,11 @@ if (isset($_POST['submit'])) {
         </section>
     </main>
 
-    <footer></footer>
+    <footer>
+        <img src="imagens/home_icone.png" alt="Icone">
+        <p>© 2025 IFSUL MY LITTLE CINE</p>
+        <a href="https://github.com/Glitchbunnyhead/My_Little_Cine" target="_blank">GitHub</a>
+    </footer>
 
 </body>
 </html>
