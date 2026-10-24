@@ -1,7 +1,7 @@
 <?php
-    $host = "localhost";
+    $host = "db";
     $usuario = "root";
-    $senha = "";
+    $senha = "root";
     $banco = "WEBSITE_CINEMA";
     
     $conn = new mysqli($host, $usuario, $senha, $banco);
