@@ -1,0 +1,123 @@
+@import "variaveis.css";
+@import "estilo.css";
+
+/* =========================================
+   ESTILO ESPECÍFICO - PÁGINA DE FILMES
+   ========================================= */
+
+.filmes-cartaz {
+    max-width: 900px;
+    margin: var(--espacamento-8) auto;
+    padding: 0 var(--espacamento-4);
+}
+
+.filmes-cartaz h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    margin-bottom: var(--espacamento-6);
+    border-bottom: 3px dashed var(--cor-primaria);
+    padding-bottom: var(--espacamento-2);
+}
+
+/* Container de cada filme em formato de "bloco/card" */
+.filme-card-item {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-4);
+    margin-bottom: var(--espacamento-6);
+    display: flex;
+    gap: var(--espacamento-6);
+    align-items: flex-start;
+    box-shadow: var(--sombra-md);
+    transition: var(--transicao);
+}
+
+.filme-card-item:hover {
+    border-color: var(--cor-secundaria);
+    box-shadow: 4px 4px 0px var(--cor-primaria);
+}
+
+/* Pôster do Filme */
+.filme-poster {
+    width: 130px;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    flex-shrink: 0;
+}
+
+/* Bloco de Informações */
+.filme-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-2);
+    flex-grow: 1;
+}
+
+.filme-info h3 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-xl);
+    color: var(--cor-secundaria-clara);
+}
+
+/* Metadados (Ano, Duração) */
+.filme-meta {
+    font-size: var(--texto-sm);
+    color: var(--cor-texto-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--espacamento-2);
+    flex-wrap: wrap;
+}
+
+/* Badge simulando a classificação etária em estilo quadrado/pixel */
+.badge-classificacao {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-secundaria);
+    padding: 2px 6px;
+    border-radius: var(--raio-sm);
+    font-weight: bold;
+    border: 1px solid var(--cor-primaria);
+    font-size: var(--texto-xs);
+}
+
+/* Sinopse */
+.filme-sinopse {
+    font-size: var(--texto-sm);
+    color: var(--cor-texto);
+    line-height: 1.4;
+    margin-top: var(--espacamento-1);
+}
+
+/* Botão de Ação alinhado igual na referência */
+.filme-acoes {
+    margin-top: var(--espacamento-3);
+}
+
+.btn-comprar {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: var(--espacamento-2) var(--espacamento-4);
+    border-radius: var(--raio-sm);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: var(--texto-sm);
+    border: 2px solid var(--cor-primaria-clara);
+    transition: var(--transicao);
+    box-shadow: 2px 2px 0px var(--cor-primaria-escura);
+}
+
+.btn-comprar:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+    border-color: var(--cor-secundaria-clara);
+}
+
+.btn-comprar:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}

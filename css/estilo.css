@@ -1,3 +1,5 @@
+@import "variaveis.css";
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -79,35 +81,7 @@ header {
     border-color: var(--cor-secundaria);
     box-shadow: 0 6px 0 var(--cor-secundaria-clara);
 }
-/*HERO*/
-.hero {
-    background: linear-gradient(135deg, var(--cor-primaria-escura), var(--cor-bg));
-    border-bottom: 4px solid var(--cor-primaria);
-    padding: var(--espacamento-16) var(--espacamento-4);
-    text-align: center;
-}
 
-.hero-conteudo h2 {
-    font-family: 'Press Start 2P', monospace, sans-serif;
-    font-size: var(--texto-xl);
-    color: var(--cor-secundaria);
-    margin-bottom: var(--espacamento-4);
-    line-height: 1.4;
-}
-
-.hero-conteudo p {
-    font-size: var(--texto-lg);
-    color: var(--cor-primaria-clara);
-    margin-bottom: var(--espacamento-6);
-}
-
-.hero-imagem img {
-    width: 70% ;
-    height: 70% ;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /*SEÇÕES*/
 section {
