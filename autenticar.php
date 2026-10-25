@@ -1,7 +1,5 @@
 <?php 
-
 session_start();
-
 require_once ('conexao/conexao.php');
 
 $email = $_POST['email'];
@@ -34,15 +32,13 @@ if ($resultado -> num_rows == 1) {
     $_SESSION['tipo'] = $usuario['tipo'];
     
    
-    header("Location: index_usuario.php");
+    header("Location:index_usuario.php");
 
-    exit;
+    exit();
     
 
 } else {
     header("Location: login.php?erro=credenciais");
-    exit;
+    exit();
 }
-
-
 ?>
