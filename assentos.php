@@ -47,6 +47,7 @@
     </header>
 
     <main>
+        <!-- Trocado para POST para manter os dados seguros e limpos na URL -->
         <form action="processar_reserva.php" method="POST">
             <input type="hidden" name="id_sala" value="<?php echo htmlspecialchars($idSala[0] ?? ''); ?>">
             <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($_SESSION['id_usuario'] ?? ''); ?>">
@@ -68,7 +69,7 @@
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                </div> 
+                </div> <!-- Fim da grid-assentos fechado corretamente -->
 
                 <div class="btn-ingressos">    
                     <button type="submit" class="btn-comprar">Selecionar Ingressos</button>

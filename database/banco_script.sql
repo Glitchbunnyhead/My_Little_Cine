@@ -59,6 +59,7 @@ fileira VARCHAR(5) NOT NULL,
 numero INT NOT NULL,
 tipo VARCHAR(30) NOT NULL DEFAULT 'comum',
 id_sala BIGINT NOT NULL,
+estado VARCHAR(8) NOT NULL DEFAULT 'livre',
 UNIQUE (id_sala, fileira, numero),
 FOREIGN KEY (id_sala) REFERENCES Sala(id_sala)
 ON UPDATE CASCADE ON DELETE RESTRICT

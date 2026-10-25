@@ -255,8 +255,20 @@ if (!$resultado_sessoes) {
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Sessões</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/variaveis.css">
+    <link rel="stylesheet" href="../css/estilo.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/geren_sessoes.css" type="text/css" media="all">
+</head>
     <title>Gerenciar Sessões</title>
 </head>
 <body>
@@ -500,7 +512,7 @@ if (!$resultado_sessoes) {
     </main>
 
     <footer>   
-        <img src="imagens/home_icone.png" alt="Icone">
+        <img src="../imagens/home_icone.png" alt="Icone">
         <p>© 2025 IFSUL MY LITTLE CINE</p>
         <a href="https://github.com/Glitchbunnyhead/My_Little_Cine" target="_blank">GitHub</a></footer>
 </body>

@@ -1,7 +1,5 @@
 @import "variaveis.css";
-@import "estilo.css";/* =========================================
-   ESTILO ESPECÍFICO - PÁGINA DE SESSÕES
-   ========================================= */
+@import "estilo.css";
 
 main {
     max-width: 900px;
@@ -12,9 +10,7 @@ main {
     gap: var(--espacamento-8);
 }
 
-/* =========================================
-   CARD DE DETALHES DO FILME (TOPO)
-   ========================================= */
+
 .filme-card-item {
     background-color: rgba(255, 255, 255, 0.02);
     border: 3px solid var(--cor-primaria);
@@ -70,9 +66,6 @@ main {
     width: fit-content;
 }
 
-/* =========================================
-   SEÇÃO DE SESSÕES DISPONÍVEIS
-   ========================================= */
 .sessoes {
     display: flex;
     flex-direction: column;
@@ -97,7 +90,7 @@ main {
     gap: var(--espacamento-4);
 }
 
-/* Item individual de sessão */
+
 .sessao-item {
     background-color: rgba(255, 255, 255, 0.03);
     border: 2px solid var(--cor-primaria);
@@ -133,7 +126,7 @@ main {
     flex-grow: 1;
 }
 
-/* Botão de Comprar Ingresso na Sessão */
+
 .sessoes-acoes .btn-comprar {
     display: inline-block;
     background-color: var(--cor-primaria);

@@ -21,7 +21,6 @@ img {
     display: block;
 }
 
-/*NAV*/
 header {
     background-color: var(--cor-primaria-escura);
     border-bottom: 4px solid var(--cor-primaria);
@@ -64,7 +63,6 @@ header {
     color: var(--cor-secundaria-clara);
 }
 
-/*BOTÕES*/
 .nav-link.btn {
     background-color: var(--cor-primaria);
     border: 2px solid var(--cor-primaria-clara);
@@ -82,8 +80,6 @@ header {
     box-shadow: 0 6px 0 var(--cor-secundaria-clara);
 }
 
-
-/*SEÇÕES*/
 section {
     padding: var(--espacamento-8) var(--espacamento-6);
     max-width: 1200px;
@@ -116,7 +112,6 @@ section h2{
     text-decoration: underline;
 }
 
-/*CARROSSEIS*/
 .carrossel-filmes, .carrossel-produtos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -124,7 +119,6 @@ section h2{
     
 }
 
-/*CARDS*/
 .card-filme, .card-produtos {
     background-color: rgba(255, 255, 255, 0.03);
     border: 3px solid var(--cor-primaria);
@@ -167,7 +161,6 @@ section h2{
     color: var(--cor-texto-muted);
 }
 
-/*FOOTER*/
 footer {
     background-color: var(--cor-primaria-escura);
     border-top: 4px solid var(--cor-primaria);

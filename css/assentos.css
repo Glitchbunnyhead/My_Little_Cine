@@ -1,38 +1,112 @@
+
+main {
+    max-width: 800px;
+    margin: var(--espacamento-8) auto;
+    padding: 0 var(--espacamento-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+}
+
+.secao-assentos {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-6);
+    box-shadow: var(--sombra-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4);
+}
+
+.secao-assentos h3 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    margin-bottom: var(--espacamento-1);
+}
+
+.instrucao {
+    font-size: var(--texto-sm);
+    color: var(--cor-texto-muted);
+    margin-bottom: var(--espacamento-4);
+}
+
 .grid-assentos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: var(--espacamento-3);
-    margin: var(--espacamento-4) 0;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: var(--espacamento-2);
+    border: 2px dashed var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.assento-box {
-    background-color: rgba(255, 255, 255, 0.05);
+.assento-item {
+    background-color: rgba(255, 255, 255, 0.04);
     border: 2px solid var(--cor-primaria);
     border-radius: var(--raio-sm);
-    padding: var(--espacamento-2);
-    text-align: center;
-    cursor: pointer;
-    transition: var(--transicao);
+    padding: var(--espacamento-3);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    gap: var(--espacamento-2);
+    cursor: pointer;
+    transition: var(--transicao);
 }
 
-/* Quando o usuário passa o mouse ou seleciona */
-.assento-box:hover {
+.assento-item:hover {
     background-color: var(--cor-primaria);
+    border-color: var(--cor-secundaria);
+}
+
+.assento-item:hover label {
     color: var(--cor-secundaria);
 }
 
-/* Se a cadeira estiver ocupada (desativada) */
-.assento-box.ocupado {
-    background-color: #333;
-    border-color: #555;
-    opacity: 0.5;
-    cursor: not-allowed;
+.assento-item input[type="checkbox"] {
+    accent-color: var(--cor-secundaria);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 }
 
-.assento-box input[type="checkbox"] {
-    accent-color: var(--cor-secundaria);
+.assento-item label {
+    font-size: var(--texto-xs);
+    font-weight: bold;
+    color: var(--cor-texto);
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-ingressos {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--espacamento-2);
+}
+
+.btn-ingressos .btn-comprar {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: var(--espacamento-3) var(--espacamento-6);
+    border-radius: var(--raio-sm);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: var(--texto-sm);
+    border: 2px solid var(--cor-primaria-clara);
+    transition: var(--transicao);
+    box-shadow: 3px 3px 0px var(--cor-primaria-escura);
+    cursor: pointer;
+}
+
+.btn-ingressos .btn-comprar:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+    border-color: var(--cor-secundaria-clara);
+}
+
+.btn-ingressos .btn-comprar:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
 }

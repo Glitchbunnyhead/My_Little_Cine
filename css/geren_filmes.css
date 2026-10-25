@@ -1,0 +1,247 @@
+
+main {
+    max-width: 1000px;
+    margin: var(--espacamento-6) auto;
+    padding: 0 var(--espacamento-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+}
+
+.admin {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+}
+
+.admin_introducao h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    text-align: center;
+}
+
+.admin_mensagem {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--cor-secundaria);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    color: var(--cor-secundaria-clara);
+    font-size: var(--texto-sm);
+    text-align: center;
+}
+
+
+.admin_formulario {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-6);
+    box-shadow: var(--sombra-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4);
+}
+
+.admin_formulario h3 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-lg);
+    color: var(--cor-secundaria);
+    border-bottom: 2px dashed var(--cor-primaria-escura);
+    padding-bottom: var(--espacamento-2);
+}
+
+.admin_formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4);
+}
+
+.formulario_grupo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-2);
+}
+
+.formulario_grupo label {
+    font-size: var(--texto-sm);
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+.formulario_grupo input[type="text"],
+.formulario_grupo input[type="number"],
+.formulario_grupo input[type="url"],
+.formulario_grupo select,
+.formulario_grupo textarea {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    padding: var(--espacamento-3);
+    color: var(--cor-texto);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--texto-sm);
+    transition: var(--transicao);
+}
+
+.formulario_grupo textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.formulario_grupo input:focus,
+.formulario_grupo select:focus,
+.formulario_grupo textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.formulario_botoes {
+    display: flex;
+    gap: var(--espacamento-3);
+    margin-top: var(--espacamento-2);
+}
+
+.formulario_botoes button[type="submit"] {
+    flex: 1;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-weight: bold;
+    font-size: var(--texto-sm);
+    border: 2px solid var(--cor-primaria-clara);
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 3px 3px 0px var(--cor-primaria-escura);
+}
+
+.formulario_botoes button[type="submit"]:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+    border-color: var(--cor-secundaria-clara);
+}
+
+.formulario_botoes button[type="submit"]:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.formulario_botoes .botao {
+    flex: 1;
+    background-color: transparent;
+    color: var(--cor-texto-muted);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-weight: bold;
+    font-size: var(--texto-sm);
+    border: 2px solid var(--cor-primaria-escura);
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transicao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario_botoes .botao:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--cor-texto);
+    border-color: var(--cor-primaria);
+}
+
+.admin_listagem {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-6);
+    box-shadow: var(--sombra-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4);
+}
+
+.admin_listagem h3 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-lg);
+    color: var(--cor-secundaria);
+    border-bottom: 2px dashed var(--cor-primaria-escura);
+    padding-bottom: var(--espacamento-2);
+}
+
+.admin_tabela {
+    overflow-x: auto;
+}
+
+.admin_tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: var(--texto-sm);
+}
+
+.admin_tabela th {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--cor-secundaria-clara);
+    padding: var(--espacamento-3);
+    border-bottom: 2px solid var(--cor-primaria);
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.admin_tabela td {
+    padding: var(--espacamento-3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--cor-texto);
+    vertical-align: middle;
+}
+
+.admin_tabela tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.admin_tabela img {
+    border-radius: var(--raio-sm);
+    border: 1px solid var(--cor-primaria-escura);
+    object-fit: cover;
+}
+
+.admin_tabela td form {
+    display: inline;
+}
+
+.admin_tabela .botao {
+    display: inline-block;
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto);
+    padding: var(--espacamento-1) var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-size: var(--texto-xs);
+    text-decoration: none;
+    border: 1px solid var(--cor-primaria);
+    transition: var(--transicao);
+    margin-right: 4px;
+}
+
+.admin_tabela .botao:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+}
+
+.admin_tabela button[type="submit"] {
+    background-color: rgba(180, 40, 40, 0.3);
+    color: #ff9999;
+    padding: var(--espacamento-1) var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-size: var(--texto-xs);
+    font-weight: bold;
+    border: 1px solid #aa3333;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.admin_tabela button[type="submit"]:hover {
+    background-color: #aa3333;
+    color: white;
+}

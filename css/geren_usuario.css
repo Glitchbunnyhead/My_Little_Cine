@@ -1,0 +1,101 @@
+
+
+main {
+    max-width: 1200px;
+    margin: var(--espacamento-6) auto;
+    padding: 0 var(--espacamento-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+}
+
+main section {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-6);
+    box-shadow: var(--sombra-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4);
+}
+
+main section h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    text-align: center;
+}
+
+main section h3 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-lg);
+    color: var(--cor-secundaria);
+    border-bottom: 2px dashed var(--cor-primaria-escura);
+    padding-bottom: var(--espacamento-2);
+}
+
+
+.admin_mensagem {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--cor-secundaria);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    color: var(--cor-secundaria-clara);
+    font-size: var(--texto-sm);
+    text-align: center;
+}
+
+.admin_tabela {
+    overflow-x: auto;
+}
+
+.admin_tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: var(--texto-sm);
+}
+
+.admin_tabela th {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--cor-secundaria-clara);
+    padding: var(--espacamento-3);
+    border-bottom: 2px solid var(--cor-primaria);
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.admin_tabela td {
+    padding: var(--espacamento-3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--cor-texto);
+    vertical-align: middle;
+}
+
+.admin_tabela tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+
+.admin_tabela td form {
+    display: inline;
+}
+
+.admin_tabela button[type="submit"] {
+    background-color: rgba(180, 40, 40, 0.3);
+    color: #ff9999;
+    padding: var(--espacamento-1) var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-size: var(--texto-xs);
+    font-weight: bold;
+    border: 1px solid #aa3333;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.admin_tabela button[type="submit"]:hover {
+    background-color: #aa3333;
+    color: white;
+}
