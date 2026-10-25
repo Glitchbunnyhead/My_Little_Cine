@@ -4,7 +4,7 @@
 
     $idSala = [$_GET["id"] ?? ""];
 
-    $sqlAssentos = "SELECT * FROM Assento WHERE id_sala = ? ;";
+    $sqlAssentos = "SELECT * FROM Assento WHERE id_sala = ? AND estado = 'livre' ;";
     $stmtAssentos = $conn->prepare($sqlAssentos);
     $stmtAssentos->execute($idSala);
     $resultadoAssentos = $stmtAssentos->get_result();
@@ -17,7 +17,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="imagens/home_icone.png" type="image/png">
-    <!-- Importando fonte -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -47,7 +46,6 @@
     </header>
 
     <main>
-        <!-- Trocado para POST para manter os dados seguros e limpos na URL -->
         <form action="processar_reserva.php" method="POST">
             <input type="hidden" name="id_sala" value="<?php echo htmlspecialchars($idSala[0] ?? ''); ?>">
             <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($_SESSION['id_usuario'] ?? ''); ?>">
@@ -69,7 +67,7 @@
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                </div> <!-- Fim da grid-assentos fechado corretamente -->
+                </div> 
 
                 <div class="btn-ingressos">    
                     <button type="submit" class="btn-comprar">Selecionar Ingressos</button>
