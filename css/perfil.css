@@ -1,0 +1,96 @@
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: var(--espacamento-6) var(--espacamento-4);
+}
+
+main section.perfil {
+    width: 100%;
+    max-width: 500px;
+}
+
+
+.perfil_conteudo {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-8);
+    box-shadow: var(--sombra-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+}
+
+.perfil_conteudo h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: var(--espacamento-2);
+}
+
+
+.perfil_info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-3);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px dashed var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    padding: var(--espacamento-4);
+}
+
+.perfil_campo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--texto-sm);
+    color: var(--cor-texto);
+    padding: var(--espacamento-2) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.perfil_campo:last-child {
+    border-bottom: none;
+}
+
+.perfil_campo strong {
+    color: var(--cor-secundaria-clara);
+    font-family: 'Roboto', sans-serif;
+}
+
+.perfil_botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--espacamento-2);
+}
+
+.perfil_botoes .botao {
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-weight: bold;
+    font-size: var(--texto-sm);
+    border: 2px solid var(--cor-primaria-clara);
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transicao);
+    box-shadow: 3px 3px 0px var(--cor-primaria-escura);
+    display: block;
+}
+
+.perfil_botoes .botao:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+    border-color: var(--cor-secundaria-clara);
+}
+
+.perfil_botoes .botao:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}

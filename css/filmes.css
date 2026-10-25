@@ -1,10 +1,6 @@
 @import "variaveis.css";
 @import "estilo.css";
 
-/* =========================================
-   ESTILO ESPECÍFICO - PÁGINA DE FILMES
-   ========================================= */
-
 .filmes-cartaz {
     max-width: 900px;
     margin: var(--espacamento-8) auto;
@@ -20,7 +16,6 @@
     padding-bottom: var(--espacamento-2);
 }
 
-/* Container de cada filme em formato de "bloco/card" */
 .filme-card-item {
     background-color: rgba(255, 255, 255, 0.02);
     border: 3px solid var(--cor-primaria);
@@ -39,7 +34,7 @@
     box-shadow: 4px 4px 0px var(--cor-primaria);
 }
 
-/* Pôster do Filme */
+
 .filme-poster {
     width: 130px;
     height: 180px;
@@ -49,7 +44,7 @@
     flex-shrink: 0;
 }
 
-/* Bloco de Informações */
+
 .filme-info {
     display: flex;
     flex-direction: column;
@@ -63,7 +58,7 @@
     color: var(--cor-secundaria-clara);
 }
 
-/* Metadados (Ano, Duração) */
+
 .filme-meta {
     font-size: var(--texto-sm);
     color: var(--cor-texto-muted);
@@ -73,7 +68,6 @@
     flex-wrap: wrap;
 }
 
-/* Badge simulando a classificação etária em estilo quadrado/pixel */
 .badge-classificacao {
     background-color: var(--cor-primaria-escura);
     color: var(--cor-secundaria);
@@ -84,7 +78,7 @@
     font-size: var(--texto-xs);
 }
 
-/* Botão de Ação alinhado igual na referência */
+
 .filme-acoes {
     margin-top: var(--espacamento-3);
 }
