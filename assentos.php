@@ -2,7 +2,7 @@
     session_start();
     require_once "conexao/conexao.php";
 
-    $idSala = [$_GET["id"] ?? ""];
+    $idSala = [$_GET["id_sala"] ?? ""];
 
     $sqlAssentos = "SELECT * FROM Assento WHERE id_sala = ? AND estado = 'livre' ;";
     $stmtAssentos = $conn->prepare($sqlAssentos);
@@ -49,8 +49,7 @@
         <form action="processar_reserva.php" method="POST">
             <input type="hidden" name="id_sala" value="<?php echo htmlspecialchars($idSala[0] ?? ''); ?>">
             <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($_SESSION['id_usuario'] ?? ''); ?>">
-            <input type="hidden" name="id_filme" value="<?php echo htmlspecialchars($_GET['id_filme'] ?? ''); ?>">
-            <input type="hidden" name="id_sessao" value="<?php echo htmlspecialchars($_GET['id_sessao'] ?? ''); ?>">
+            <input type="hidden" name="id_filme" value="<?php echo htmlspecialchars($_POST['id_filme'] ?? ''); ?>">
 
             <div class="secao-assentos">
                 <h3>Escolha os seus assentos</h3>

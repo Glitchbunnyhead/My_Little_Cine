@@ -1,0 +1,108 @@
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--espacamento-6, 30px);
+    min-height: 70vh;
+    
+}
+
+main h3 {
+    text-align: center;
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    color: var(--cor-texto, #ffffff);
+    margin-bottom: var(--espacamento-5, 24px);
+    font-size: 1.8rem;
+}
+main h4 {
+    text-align:left;
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-3, 16px);
+    font-size: 1.5rem;
+}
+
+
+.secao-ingressos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4, 16px);
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--cor-superficie, rgba(255, 255, 255, 0.03));
+    padding: var(--espacamento-6, 24px);
+    border-radius: var(--raio-md, 12px);
+    border: 5px solid var(--cor-primaria);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.grid-ingressos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-3, 12px);
+    width: 100%;
+}
+
+
+.grid-ingressos label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: var(--espacamento-3, 12px) var(--espacamento-4, 16px);
+    border-radius: var(--raio-sm, 8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family:  'Pixelify Sans', monospace, sans-serif;
+    color: var(--cor-primaria-escura);
+    font-size: 1.05rem;
+    border: 2px solid var(--cor-primaria);
+    transition: border-color 0.2s ease;
+}
+
+.grid-ingressos label:hover {
+    border-color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+
+}
+
+.grid-ingressos input[type="number"] {
+    width: 75px;
+    padding: 8px;
+    text-align: center;
+    background-color: #2b2b2b;
+    border: 1px solid #444444;
+    border-radius: var(--raio-sm, 6px);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.grid-ingressos input[type="number"]:focus {
+    outline: none;
+    border-color: var(--cor-primaria, #ff8c00);
+}
+
+.secao-ingressos button[type="submit"] {
+    background-color: var(--cor-primaria, #ff8c00);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--raio-sm, 6px);
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    width: 100%;
+    margin-top: var(--espacamento-2, 8px);
+}
+
+.secao-ingressos button[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.secao-ingressos button[type="submit"]:active {
+    transform: scale(0.98);
+}

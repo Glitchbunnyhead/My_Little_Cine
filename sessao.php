@@ -4,7 +4,7 @@
 
     $idFilme = [$_GET["id"] ?? ""];
 
-    $sqlSalaSessao = "SELECT Sessao.data, Sessao.horario, Sessao.tipo, Sessao.preco, Sessao.status, Sessao.id_filme, Sessao.id_idioma, Sessao.id_sala, Sala.nome, Sala.capacidade FROM Sessao INNER JOIN Sala ON Sessao.id_sala = Sala.id_sala WHERE Sessao.id_filme = ?";
+    $sqlSalaSessao = "SELECT Sessao.id_sessao,Sessao.data, Sessao.horario, Sessao.tipo, Sessao.status, Sessao.id_filme, Sessao.id_idioma, Sessao.id_sala, Sala.nome, Sala.capacidade FROM Sessao INNER JOIN Sala ON Sessao.id_sala = Sala.id_sala WHERE Sessao.id_filme = ?";
     $stmtSalaSessao = $conn->prepare($sqlSalaSessao);
     $stmtSalaSessao->execute($idFilme);
     $resultadoSalaSessao = $stmtSalaSessao->get_result();
@@ -79,10 +79,9 @@
                             <p> | horário : <?php echo htmlspecialchars($sessao['horario'] ?? ''); ?> <br>
                                 | sala : <?php echo htmlspecialchars($sessao['nome'] ?? ''); ?> <br>
                                 | tipo : <?php echo htmlspecialchars($sessao['tipo'] ?? ''); ?> <br>
-                                | preço : <?php echo htmlspecialchars($sessao['preco'] ?? ''); ?> <br>
                             </p>
                             <div class="sessoes-acoes">
-                               <a href="assentos.php?id=<?php echo $sessao['id_sala']; ?>" class = "btn-comprar">Reservar Assentos</a> 
+                               <a href="assentos.php?id_sala=<?php echo $sessao['id_sala'];?>" class = "btn-comprar">Reservar Assentos</a> 
                             </div>
                         </div>
                     </div>
