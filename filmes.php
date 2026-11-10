@@ -62,6 +62,7 @@
                                 </p>
                                 <div class="filme-acoes">
                                    <a href="sessao.php?id=<?php echo $filme['id_filme']; ?>" class = "btn-comprar">Comprar Ingressos</a>
+                                   <a href="filmes.php" class = "btn-voltar">Voltar</a> 
                                 </div>
                             </div>
                         </div>

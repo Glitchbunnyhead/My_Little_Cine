@@ -61,6 +61,7 @@
                     <?php endif; ?>
                 </div> 
                 <button type="submit">Continuar</button>
+                <a href="assentos.php" class = "btn-voltar">Voltar</a> 
             </div>
         </form>
         </main>
