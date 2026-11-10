@@ -88,7 +88,8 @@
                 <?php endforeach; ?>
             <?php else: ?>
                 <p style="color: #b3b3b3;">Nenhum filme em cartaz no momento.</p>
-            <?php endif; ?>    
+            <?php endif; ?>   
+            <button onclick="history.back()">Voltar</button> 
     </main>
 
     <footer>

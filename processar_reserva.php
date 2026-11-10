@@ -8,7 +8,8 @@
     if (count($assentosSelecionados) == 0) {
         header("Location: assentos.php?id=" . $idSala . "&erro=nenhum_assento");
         exit;
-    } else {
+    } 
+    else {
         foreach ($assentosSelecionados as $assento) { 
             $assentoFileira = substr($assento, 0, 1); 
             $assentoNumero = substr($assento, 1);    

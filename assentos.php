@@ -70,6 +70,7 @@
 
                 <div class="btn-ingressos">    
                     <button type="submit" class="btn-comprar">Selecionar Ingressos</button>
+                    <a href="sessao.php" class = "btn-voltar">Voltar</a> 
                 </div>         
             </div>
         </form>
