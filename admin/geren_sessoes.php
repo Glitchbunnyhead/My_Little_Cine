@@ -276,7 +276,7 @@ if (!$resultado_sessoes) {
         <h2 class="nav_titulo">My Little Cine</h2>
 
         <nav class="nav_container">
-            <a href="index_admin.php"></a>
+            <a href="index_admin.php" class="nav_link">Painel Administrativo</a>
         </nav>
     </header>
 
@@ -514,6 +514,7 @@ if (!$resultado_sessoes) {
     <footer>   
         <img src="../imagens/home_icone.png" alt="Icone">
         <p>© 2025 IFSUL MY LITTLE CINE</p>
-        <a href="https://github.com/Glitchbunnyhead/My_Little_Cine" target="_blank">GitHub</a></footer>
+        <a href="https://github.com/Glitchbunnyhead/My_Little_Cine" target="_blank">GitHub</a>
+    </footer>
 </body>
 </html>

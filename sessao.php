@@ -64,6 +64,9 @@
                             <span> | duração : <?php echo $filme['duracao_minutos']; ?> min</span>
                             <span> | sinopse : <?php echo $filme['sinopse']; ?> </span>
                         </p>
+                        <div class="filme-acoes">
+                                   <a href="assentos.php?id=<?php echo $filme['id_filme']; ?>" class = "btn-comprar">Escolher assentos</a>
+                                </div>
                     </div>
                 </div>
 
