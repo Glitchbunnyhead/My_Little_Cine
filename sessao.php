@@ -12,6 +12,7 @@
 
     $sqlFilmes = "SELECT * FROM Filme WHERE id_filme = ? ;";
     $stmtFilmes = $conn->prepare($sqlFilmes);
+    // $stmtFilmes -> bind_param("i", $idFilme); 
     $stmtFilmes->execute($idFilme);
     $resultadoFilmes = $stmtFilmes->get_result();
     $filme = $resultadoFilmes->fetch_assoc();

@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 //buscar sala para edição
 
-$sala_edição = null;
+$sala_edicao = null;
 
 if (isset($_GET["editar"])) {
 
@@ -125,11 +125,11 @@ if (isset($_GET["editar"])) {
 
     $resultado_edicao = mysqli_stmt_get_result($stmt);
 
-    $sala_edição = mysqli_fetch_assoc($resultado_edicao);
+    $sala_edicao = mysqli_fetch_assoc($resultado_edicao);
 
     mysqli_stmt_close($stmt);
 
-    if (!$sala_edição) {
+    if (!$sala_edicao) {
         $mensagem_erro = "Sala não encontrada para edição.";
     }
 }
@@ -170,15 +170,15 @@ if (!$resultado_salas) {
         <!-- mensagens de sucesso -->
 
         <?php if (isset($_GET["cadastro"])): ?>
-            <p>Salas encontrada com sucesso!</p>
+            <p>Sala encontrada com sucesso!</p>
         <?php endif; ?>
 
         <?php if (isset($_GET["edicao"])): ?>
-            <p>Salas atualizada com sucesso!</p>
+            <p>Sala atualizada com sucesso!</p>
         <?php endif; ?>
 
         <?php if (isset($_GET["exclusao"])): ?>
-            <p>Salas excluída com sucesso!</p>
+            <p>Sala excluída com sucesso!</p>
         <?php endif; ?>
 
         <!-- mensagens de erro -->

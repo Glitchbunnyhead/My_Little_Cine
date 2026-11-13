@@ -147,7 +147,8 @@ $resultado_produtos = mysqli_query($conn, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Produtos</title>
 
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/variaveis.css">
+    <link rel="stylesheet" href="../css/estilo.css" type="text/css" media="all">
 </head>
 
 <body>

@@ -45,7 +45,7 @@
 
                     <div class="admin_card">
                         <h3>Cadastrar Salas</h3>
-                        <a href="cadastrar_sala.php" class="botao">Cadastrar Salas</a>
+                        <a href="geren_salas.php" class="botao">Cadastrar Salas</a>
                     </div>
 
                     <div class="admin_card">

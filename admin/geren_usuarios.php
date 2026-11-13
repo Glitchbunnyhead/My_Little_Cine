@@ -132,7 +132,7 @@ if(!$resultado) {
             <h3>Usuários cadastrados</h3>
 
             <div class="admin_tabela">
-                <table>
+                <table border="1">
                     <thead>
                         <tr>
                             <th>ID</th>
