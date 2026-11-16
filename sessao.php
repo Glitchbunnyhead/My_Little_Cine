@@ -2,7 +2,11 @@
     session_start();
     require_once "conexao/conexao.php";
 
-    $idFilme = [$_GET["id"] ?? ""];
+    if (!empty($_GET["id"])) {
+        $_SESSION['id_filme'] = (int) $_GET["id"];
+    }
+
+    $idFilme = [$_SESSION['id_filme'] ?? 0];
 
     $sqlSalaSessao = "SELECT Sessao.id_sessao,Sessao.data, Sessao.horario, Sessao.tipo, Sessao.status, Sessao.id_filme, Sessao.id_idioma, Sessao.id_sala, Sala.nome, Sala.capacidade FROM Sessao INNER JOIN Sala ON Sessao.id_sala = Sala.id_sala WHERE Sessao.id_filme = ?";
     $stmtSalaSessao = $conn->prepare($sqlSalaSessao);
@@ -16,6 +20,8 @@
     $stmtFilmes->execute($idFilme);
     $resultadoFilmes = $stmtFilmes->get_result();
     $filme = $resultadoFilmes->fetch_assoc();
+
+
 
 ?>
 <!DOCTYPE html>
@@ -82,9 +88,13 @@
                                 | sala : <?php echo htmlspecialchars($sessao['nome'] ?? ''); ?> <br>
                                 | tipo : <?php echo htmlspecialchars($sessao['tipo'] ?? ''); ?> <br>
                             </p>
+
                             <div class="sessoes-acoes">
-                               <a href="assentos.php?id_sala=<?php echo $sessao['id_sala'];?>" class = "btn-comprar">Reservar Assentos</a> 
+                                <a href="assentos.php?id_sala=<?php echo $sessao['id_sala']; ?>&id_sessao=<?php echo $sessao['id_sessao']; ?>" class="btn-comprar">
+                                Reservar Assentos
+                                </a>
                             </div>
+
                         </div>
                     </div>
                 <?php endforeach; ?>
