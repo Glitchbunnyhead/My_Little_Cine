@@ -3,12 +3,26 @@
     require_once "conexao/conexao.php";
 
     $idSala = [$_GET["id_sala"] ?? ""];
+    $idSessao = [$_GET["id_sessao"] ?? ""];
+
+    $sqlPreco = "SELECT preco FROM Sessao WHERE id_sessao = ?";
+    $stmtPreco = $conn->prepare($sqlPreco);
+    $stmtPreco->execute([$idSessao[0] ?? ""]);
+    $dadosSessao = $stmtPreco->get_result()->fetch_assoc();
+
+    if ($dadosSessao) {
+        $_SESSION['id_sessao'] = $idSessao[0] ?? "";
+        $_SESSION['precoInteira'] = $dadosSessao['preco'];
+        
+    }
 
     $sqlAssentos = "SELECT * FROM Assento WHERE id_sala = ? AND estado = 'livre' ;";
     $stmtAssentos = $conn->prepare($sqlAssentos);
     $stmtAssentos->execute($idSala);
     $resultadoAssentos = $stmtAssentos->get_result();
     $assentos = $resultadoAssentos->fetch_all(MYSQLI_ASSOC);
+
+
 ?>  
 
 <!DOCTYPE html>

@@ -65,7 +65,7 @@
                                     <input type="hidden" name="preco_produto" value="<?php echo htmlspecialchars($produto['preco']); ?>">
                                     <img src="<?php echo htmlspecialchars($produto['foto'] ?? ''); ?>" alt="Foto do produto">
                                     <label for="quantidade_<?php echo $produto['id_produto']; ?>">Quantidade:</label>
-                                    <input type="number" id="quantidade_<?php echo $produto['id_produto']; ?>" name="quantidade[<?php echo $produto['id_produto']; ?>]" value="1" min ="0">   
+                                    <input type="number" id="quantidade_<?php echo $produto['id_produto']; ?>" name="quantidade[<?php echo $produto['id_produto']; ?>]" value="0" min ="0">   
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>

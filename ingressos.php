@@ -3,7 +3,7 @@
     require_once "conexao/conexao.php"; 
 
     $qntReservados = isset($_SESSION['qntAssentos']) ? (int)$_SESSION['qntAssentos'] : 0;
-    $precoInteira = 30.00;
+    $precoInteira = isset($_SESSION['precoInteira']) ? (float)$_SESSION['precoInteira'] : 30.00;
     $precoMeia = $precoInteira / 2;
 ?>
 
