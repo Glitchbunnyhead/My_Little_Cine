@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área administrativa</title>
-
+    <link rel="icon" href="imagens/home_icone.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,17 +18,22 @@
 
 <body>
     <header>
-        <h2 class="nav_titulo">My Little Cine</h2>
+        <h2 class="nav-titulo">My Little Cine</h2>
+        <nav class="nav-container">
+            <a href="index_usuario.php" class="nav-logo">
+                <img src="../imagens/home_icone.png" alt="Logo">
+            </a>
 
-        <nav class="nav_container">
-            <a href="../index_usuario.php" class="nav_link">Página Inicial</a>
+            <a href="../perfil.php" class="nav-link">Meu Perfil</a>
+            <a href="../filmes.php" class="nav-link">Filmes</a>
+            <a href="../logout.php" class="nav-link">Logout</a>
+            <a href="../sobre.php" class="nav-link">Sobre</a>
         </nav>
     </header>
 
     <main>
         <section class="index_admin">
             <div class="index_admin_conteudo"> <!-- Corrigido para class -->
-
                 <h2>Área Administrativa</h2>
 
                 <div class="index_admin_opcoes">

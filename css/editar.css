@@ -1,23 +1,26 @@
+@import "variaveis.css";
 
+/* Estilos principais para a página de edição */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    padding: var(--espacamento-6) var(--espacamento-4);
+    padding: var(--espacamento-8) var(--espacamento-4);
 }
 
 main section.editar {
     width: 100%;
-    max-width: 550px;
+    max-width: 540px;
 }
 
+/* Card principal de edição */
 .editar_conteudo {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--cor-bg);
     border: 3px solid var(--cor-primaria);
     border-radius: var(--raio-md);
     padding: var(--espacamento-8);
-    box-shadow: var(--sombra-md);
+    box-shadow: 6px 6px 0px var(--cor-primaria-escura); 
     display: flex;
     flex-direction: column;
     gap: var(--espacamento-6);
@@ -29,19 +32,21 @@ main section.editar {
     color: var(--cor-secundaria);
     text-align: center;
     margin-bottom: var(--espacamento-1);
+    text-shadow: 2px 2px var(--cor-primaria-escura);
 }
 
+/* Mensagem de retorno */
 .editar_mensagem {
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 2px dashed var(--cor-secundaria);
+    background-color: rgba(19, 218, 92, 0.15);
+    border: 2px dashed var(--cor-sucesso);
     padding: var(--espacamento-3);
     border-radius: var(--raio-sm);
-    color: var(--cor-secundaria-clara);
+    color: #8effb4;
     font-size: var(--texto-sm);
     text-align: center;
 }
 
-
+/* Formulário de Edição */
 form {
     display: flex;
     flex-direction: column;
@@ -64,7 +69,7 @@ form {
 .formulario_grupo input[type="email"],
 .formulario_grupo input[type="password"],
 .formulario_grupo input[type="date"] {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid var(--cor-primaria-escura);
     border-radius: var(--raio-sm);
     padding: var(--espacamento-3);
@@ -77,9 +82,10 @@ form {
 .formulario_grupo input:focus {
     outline: none;
     border-color: var(--cor-secundaria);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(234, 196, 53, 0.3);
 }
 
+/* Botões tipo radio */
 .formulario_grupo div {
     display: flex;
     align-items: center;
@@ -89,17 +95,19 @@ form {
 
 .formulario_grupo input[type="radio"] {
     accent-color: var(--cor-secundaria);
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
 }
 
 .formulario_grupo div label {
     font-weight: normal;
-    font-size: var(--texto-xs);
+    font-size: var(--texto-sm);
     cursor: pointer;
+    color: var(--cor-primaria-clara);
 }
 
+/* Botões de Salvar e Cancelar */
 .formulario_botoes {
     display: flex;
     gap: var(--espacamento-3);
@@ -113,7 +121,8 @@ form {
     padding: var(--espacamento-3);
     border-radius: var(--raio-sm);
     font-weight: bold;
-    font-size: var(--texto-sm);
+    font-size: var(--texto-base);
+    font-family: var(--fonte-principal);
     border: 2px solid var(--cor-primaria-clara);
     cursor: pointer;
     transition: var(--transicao);
@@ -124,6 +133,8 @@ form {
     background-color: var(--cor-secundaria);
     color: var(--cor-primaria-escura);
     border-color: var(--cor-secundaria-clara);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--cor-primaria);
 }
 
 .formulario_botoes button[type="submit"]:active {
@@ -138,7 +149,8 @@ form {
     padding: var(--espacamento-3);
     border-radius: var(--raio-sm);
     font-weight: bold;
-    font-size: var(--texto-sm);
+    font-size: var(--texto-base);
+    font-family: var(--fonte-principal);
     border: 2px solid var(--cor-primaria-escura);
     text-align: center;
     text-decoration: none;
@@ -146,10 +158,12 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
 }
 
 .formulario_botoes .botao:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(239, 68, 68, 0.15);
     color: var(--cor-texto);
-    border-color: var(--cor-primaria);
+    border-color: var(--cor-erro);
+    box-shadow: 5px 5px 0px var(--cor-primaria-escura);
 }

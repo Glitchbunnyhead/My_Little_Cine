@@ -1,0 +1,240 @@
+@import "variaveis.css";
+@import "estilo.css";
+
+/* Estilos específicos para a página de gerenciamento de produtos */
+main {
+    max-width: 1100px;
+    margin: var(--espacamento-8) auto;
+    padding: 0 var(--espacamento-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+    flex-grow: 1;
+}
+
+/* Caixa principal da seção */
+main section {
+    background-color: rgba(36, 30, 33, 0.85);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-6);
+    box-shadow: 6px 6px 0px var(--cor-primaria-escura);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+}
+
+/* Títulos principais e subtítulos */
+main section > h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    text-align: center;
+    text-shadow: 2px 2px var(--cor-primaria-escura);
+    border-bottom: 3px dashed var(--cor-primaria);
+    padding-bottom: var(--espacamento-3);
+    margin: 0;
+}
+
+main section > h3 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-lg);
+    color: var(--cor-secundaria);
+    border-bottom: 2px dashed var(--cor-primaria-escura);
+    padding-bottom: var(--espacamento-2);
+    margin-top: var(--espacamento-4);
+}
+
+/* Mensagens de retorno direto no PHP */
+main section > p:not(:last-child) {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--cor-secundaria);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    color: var(--cor-secundaria-clara);
+    font-size: var(--texto-sm);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Formulário de cadastro / edição */
+main section form:not(.admin_tabela form) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-3);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: var(--espacamento-5);
+    border-radius: var(--raio-sm);
+    border: 2px solid var(--cor-primaria-escura);
+}
+
+main section form label {
+    font-size: var(--texto-sm);
+    font-weight: bold;
+    color: var(--cor-texto);
+    font-family: 'Roboto', sans-serif;
+    margin-top: var(--espacamento-2);
+}
+
+main section form input[type="text"],
+main section form input[type="number"],
+main section form select,
+main section form textarea {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    padding: var(--espacamento-3);
+    color: var(--cor-texto);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--texto-sm);
+    width: 100%;
+}
+
+main section form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+main section form input:focus,
+main section form select:focus,
+main section form textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 5px rgba(234, 196, 53, 0.3);
+}
+
+/* Botões do formulário */
+main section form button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-weight: bold;
+    font-size: var(--texto-base);
+    font-family: var(--fonte-principal);
+    border: 2px solid var(--cor-primaria-clara);
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 3px 3px 0px var(--cor-primaria-escura);
+    margin-top: var(--espacamento-3);
+    width: 100%;
+}
+
+main section form button[type="submit"]:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+    border-color: var(--cor-secundaria-clara);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--cor-primaria);
+}
+
+main section form a {
+    display: inline-block;
+    text-align: center;
+    color: var(--cor-texto-muted);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--texto-sm);
+    margin-top: var(--espacamento-2);
+    text-decoration: none;
+}
+
+main section form a:hover {
+    color: var(--cor-secundaria-clara);
+    text-decoration: underline;
+}
+
+/* Tabela de listagem de produtos */
+.admin_tabela {
+    overflow-x: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    padding: var(--espacamento-2);
+}
+
+.admin_tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: var(--texto-sm);
+    font-family: 'Roboto', sans-serif;
+}
+
+.admin_tabela th {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--cor-secundaria);
+    padding: var(--espacamento-3);
+    border-bottom: 2px solid var(--cor-primaria);
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    white-space: nowrap;
+}
+
+.admin_tabela td {
+    padding: var(--espacamento-3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--cor-texto);
+    vertical-align: middle;
+}
+
+.admin_tabela tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.admin_tabela img {
+    border-radius: var(--raio-sm);
+    border: 1px solid var(--cor-primaria-escura);
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
+/* Botões de Editar / Excluir */
+.admin_tabela td a {
+    display: inline-block;
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto);
+    padding: var(--espacamento-1) var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-size: var(--texto-xs);
+    font-family: var(--fonte-principal);
+    text-decoration: none;
+    border: 1px solid var(--cor-primaria);
+    transition: var(--transicao);
+    margin-bottom: 4px;
+}
+
+.admin_tabela td a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+}
+
+.admin_tabela td form {
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.admin_tabela button[type="submit"] {
+    background-color: rgba(180, 40, 40, 0.3);
+    color: #ff9999;
+    padding: var(--espacamento-1) var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-size: var(--texto-xs);
+    font-weight: bold;
+    font-family: var(--fonte-principal);
+    border: 1px solid #aa3333;
+    cursor: pointer;
+    transition: var(--transicao);
+    width: auto;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+}
+
+.admin_tabela button[type="submit"]:hover {
+    background-color: #aa3333;
+    color: white;
+    transform: none;
+    box-shadow: none;
+}

@@ -1,6 +1,7 @@
 @import "variaveis.css";
 @import "estilo.css";
 
+/* Estilos específicos para a página de filmes */
 .filmes-cartaz {
     max-width: 900px;
     margin: var(--espacamento-8) auto;
@@ -14,41 +15,44 @@
     margin-bottom: var(--espacamento-6);
     border-bottom: 3px dashed var(--cor-primaria);
     padding-bottom: var(--espacamento-2);
+    text-shadow: 2px 2px var(--cor-primaria-escura);
 }
 
+/* Card individual do filme  */
 .filme-card-item {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--cor-bg);
     border: 3px solid var(--cor-primaria);
     border-radius: var(--raio-md);
-    padding: var(--espacamento-4);
+    padding: var(--espacamento-5);
     margin-bottom: var(--espacamento-6);
     display: flex;
     gap: var(--espacamento-6);
     align-items: flex-start;
-    box-shadow: var(--sombra-md);
+    box-shadow: 6px 6px 0px var(--cor-primaria-escura); 
     transition: var(--transicao);
 }
 
 .filme-card-item:hover {
     border-color: var(--cor-secundaria);
-    box-shadow: 4px 4px 0px var(--cor-primaria);
+    box-shadow: 8px 8px 0px var(--cor-secundaria);
+    transform: translateY(-2px);
 }
 
-
 .filme-poster {
-    width: 130px;
-    height: 180px;
+    width: 140px;
+    height: 200px;
     object-fit: cover;
     border: 2px solid var(--cor-primaria-escura);
     border-radius: var(--raio-sm);
     flex-shrink: 0;
+    background-color: var(--cor-primaria-escura);
 }
-
 
 .filme-info {
     display: flex;
     flex-direction: column;
-    gap: var(--espacamento-2);
+    gap: var(--espacamento-3);
+    padding: var(--espacamento-6) var(--espacamento-4) var(--espacamento-4) var(--espacamento-4);
     flex-grow: 1;
 }
 
@@ -58,7 +62,6 @@
     color: var(--cor-secundaria-clara);
 }
 
-
 .filme-meta {
     font-size: var(--texto-sm);
     color: var(--cor-texto-muted);
@@ -66,41 +69,46 @@
     align-items: center;
     gap: var(--espacamento-2);
     flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
 }
 
+/*Icone da classificação  */
 .badge-classificacao {
     background-color: var(--cor-primaria-escura);
     color: var(--cor-secundaria);
-    padding: 2px 6px;
+    padding: 2px 8px;
     border-radius: var(--raio-sm);
     font-weight: bold;
     border: 1px solid var(--cor-primaria);
     font-size: var(--texto-xs);
 }
 
-
 .filme-acoes {
-    margin-top: var(--espacamento-3);
+    margin-top: var(--espacamento-2);
 }
 
+/* Botão de comprar ingressos */
 .btn-comprar {
     display: inline-block;
     background-color: var(--cor-primaria);
     color: var(--cor-texto);
-    padding: var(--espacamento-2) var(--espacamento-4);
+    padding: var(--espacamento-2) var(--espacamento-6);
     border-radius: var(--raio-sm);
     text-decoration: none;
     font-weight: bold;
-    font-size: var(--texto-sm);
+    font-size: var(--texto-base);
+    font-family: var(--fonte-principal);
     border: 2px solid var(--cor-primaria-clara);
     transition: var(--transicao);
-    box-shadow: 2px 2px 0px var(--cor-primaria-escura);
+    box-shadow: 3px 3px 0px var(--cor-primaria-escura);
 }
 
 .btn-comprar:hover {
     background-color: var(--cor-secundaria);
     color: var(--cor-primaria-escura);
     border-color: var(--cor-secundaria-clara);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--cor-primaria);
 }
 
 .btn-comprar:active {

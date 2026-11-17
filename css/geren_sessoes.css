@@ -10,7 +10,7 @@ main {
 }
 
 main section {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--cor-bg);;
     border: 3px solid var(--cor-primaria);
     border-radius: var(--raio-md);
     padding: var(--espacamento-6);

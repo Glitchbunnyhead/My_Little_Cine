@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/login-cadastro.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -15,12 +16,12 @@
 </head>
 <body>
     <header>
-        <h2 class="nav_titulo">My Little Cine</h2>
-
-        <nav class="nav_container">
-            <a href="index_usuario.php" class="nav_link">Página Inicial</a>
-
-            <a href="cadastrar.php" class="nav_link">Criar conta</a>
+        <h2 class="nav-titulo">My Little Cine</h2>
+        <nav class="nav-container">
+            <a href="index_usuario.php" class="nav-logo">
+                <img src="imagens/home_icone.png" alt="Logo">
+            </a>
+           <a href="cadastrar.php" class="nav-link btn-negativo">Criar conta</a>
         </nav>
     </header>
 

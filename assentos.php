@@ -30,7 +30,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imagens/home_icone.png" type="image/png">
+    <link rel="icon" href="imagens/seat.png" type="image/png">
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -84,10 +84,10 @@
 
                 <div class="btn-ingressos">    
                     <button type="submit" class="btn-comprar">Selecionar Ingressos</button>
-                    <a href="sessao.php" class = "btn-voltar">Voltar</a> 
                 </div>         
             </div>
         </form>
+        <a href="sessao.php" class = "btn-voltar">Voltar</a> 
     </main>
 
     <footer>

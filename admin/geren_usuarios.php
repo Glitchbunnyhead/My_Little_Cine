@@ -104,15 +104,20 @@ if(!$resultado) {
 
     <link rel="stylesheet" href="../css/variaveis.css">
     <link rel="stylesheet" href="../css/estilo.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/geren_usuarios.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/geren_usuario.css" type="text/css" media="all">
 </head>
 <body>
     <header>
-        <h2 class="nav_titulo">My Little Cine</h2>
+        <h2 class="nav-titulo">My Little Cine</h2>
+        <nav class="nav-container">
+            <a href="index_usuario.php" class="nav-logo">
+                <img src="../imagens/home_icone.png" alt="Logo">
+            </a>
 
-        <nav class="nav_container">
-            <a href="index_admin.php">Painel Administrativo</a>
-
+            <a href="../perfil.php" class="nav-link">Meu Perfil</a>
+            <a href="../filmes.php" class="nav-link">Filmes</a>
+            <a href="../logout.php" class="nav-link">Logout</a>
+            <a href="../sobre.php" class="nav-link">Sobre</a>
         </nav>
     </header>
 

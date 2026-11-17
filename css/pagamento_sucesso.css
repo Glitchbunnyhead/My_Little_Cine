@@ -1,0 +1,76 @@
+@import "variaveis.css";
+@import "estilo.css";
+
+/* Estilos específicos para a página de sucesso no pagamento */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espacamento-8) var(--espacamento-4);
+    flex-grow: 1;
+    min-height: 70vh;
+    text-align: center;
+}
+
+/* Container de aviso centralizado */
+.sucesso-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacamento-6);
+    width: 100%;
+    max-width: 500px;
+    background-color:var(--cor-bg); 
+    padding: var(--espacamento-8);
+    border-radius: var(--raio-md);
+    border: 3px solid var(--cor-primaria);
+    box-shadow: 6px 6px 0px var(--cor-primaria-escura); 
+}
+
+main h1 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    text-shadow: 2px 2px var(--cor-primaria-escura);
+    line-height: 1.3;
+}
+
+main p {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--texto-base);
+    color: var(--cor-texto-muted);
+    line-height: 1.6;
+}
+
+/* Botão de retorno padronizado */
+main .btn-comprar {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-weight: bold;
+    font-size: var(--texto-base);
+    font-family: var(--fonte-principal);
+    border: 2px solid var(--cor-primaria-clara);
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transicao);
+    box-shadow: 3px 3px 0px var(--cor-primaria-escura);
+    margin-top: var(--espacamento-2);
+}
+
+main .btn-comprar:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+    border-color: var(--cor-secundaria-clara);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--cor-primaria);
+}
+
+main .btn-comprar:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
