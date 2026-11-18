@@ -1,0 +1,34 @@
+@import "variaveis.css";
+@import "estilo.css";
+
+/* Estilos específicos para a página de sobre */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espacamento-8) var(--espacamento-4);
+    flex-grow: 1;
+    min-height: 70vh;
+}
+
+/* Card principal do sobre */
+.sobre_conteudo {
+    background-color:var(--cor-bg); 
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-8);
+    box-shadow: 6px 6px 0px var(--cor-primaria-escura); 
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+}
+
+.sobre_conteudo h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: var(--espacamento-2);
+    text-shadow: 2px 2px var(--cor-primaria-escura);
+}

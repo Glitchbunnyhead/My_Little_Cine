@@ -204,12 +204,13 @@ $resultado = mysqli_query($conn, $sql);
 <header>
         <h2 class="nav-titulo">My Little Cine</h2>
         <nav class="nav-container">
-            <a href="index_usuario.php" class="nav-logo">
+            <a href="../index_usuario.php" class="nav-logo">
                 <img src="../imagens/home_icone.png" alt="Logo">
             </a>
 
             <a href="../perfil.php" class="nav-link">Meu Perfil</a>
             <a href="../filmes.php" class="nav-link">Filmes</a>
+            <a href="index_admin.php" class="nav-link">Voltar</a>
             <a href="../logout.php" class="nav-link">Logout</a>
             <a href="../sobre.php" class="nav-link">Sobre</a>
         </nav>

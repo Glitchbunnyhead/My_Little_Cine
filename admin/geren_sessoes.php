@@ -279,6 +279,7 @@ if (!$resultado_sessoes) {
 
             <a href="../perfil.php" class="nav-link">Meu Perfil</a>
             <a href="../filmes.php" class="nav-link">Filmes</a>
+            <a href="index_admin.php" class="nav-link">Voltar</a>
             <a href="../logout.php" class="nav-link">Logout</a>
             <a href="../sobre.php" class="nav-link">Sobre</a>
         </nav>

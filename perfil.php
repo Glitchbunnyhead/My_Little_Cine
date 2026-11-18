@@ -47,6 +47,7 @@ mysqli_stmt_close($stmt);
     <header>
         <h2 class="nav-titulo">My Little Cine</h2>
         <nav class="nav-container">
+            
             <a href="index_usuario.php" class="nav-logo">
                 <img src="imagens/home_icone.png" alt="Logo">
             </a>

@@ -50,7 +50,7 @@
                 <img src="imagens/home_icone.png" alt="Logo">
             </a>
             <?php if (isset($_SESSION["tipo"]) && $_SESSION["tipo"] == "admin"): ?>
-                <a href="index_admin.php" class="nav-link btn">Administração</a>
+                <a href="admin/index_admin.php" class="nav-link btn">Administração</a>
             <?php endif; ?>
             <a href="perfil.php" class="nav-link">Meu Perfil</a>
             <a href="filmes.php" class="nav-link">Filmes</a>
