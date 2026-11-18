@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imagens/home_icone.png" type="image/png">
+    <link rel="icon" href="imagens/filmes-icone.png" type="image/png">
     <!-- Importando fonte -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +62,7 @@
                                 </p>
                                 <div class="filme-acoes">
                                    <a href="sessao.php?id=<?php echo $filme['id_filme']; ?>" class = "btn-comprar">Comprar Ingressos</a>
-                                   <a href="filmes.php" class = "btn-voltar">Voltar</a> 
+                                  
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                 <?php endif; ?>    
                  
         </div>       
-
+        <a href="index_usuario.php" class="btn-voltar">← Voltar</a>
     </main>
 
      <footer>

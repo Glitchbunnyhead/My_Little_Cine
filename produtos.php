@@ -20,7 +20,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imagens/home_icone.png" type="image/png">
+    <link rel="icon" href="imagens/produtos.png" type="image/png">
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -51,10 +51,11 @@
 
     <main>
         <h3>Escolha os seus produtos</h3>
+        <form action="processar_produtos.php" method="POST">
         <div class="secao-produtos">
                 <div class="grid-produtos">
                     <?php if (count($produtos) > 0): ?>
-                        <form action="processar_produtos.php" method="POST">
+                        
                         <?php foreach ($produtos as $produto): ?>
                             <div class="produto">
                                 <h4><?php echo htmlspecialchars($produto['nome']); ?></h4>
@@ -74,8 +75,9 @@
                 </div> 
             <button type="submit">Continuar</button>
             </form>    
-            <a href="assentos.php" class = "btn-voltar">Voltar</a> 
-        </div>       
+            
+        </div>  
+        <a href="assentos.php" class = "btn-voltar">Voltar</a>      
     </main>
                 
     <footer>

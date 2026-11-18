@@ -32,6 +32,7 @@ mysqli_stmt_close($stmt);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/editar-perfil.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -44,12 +45,24 @@ mysqli_stmt_close($stmt);
 </head>
 <body>
     <header>
-        <h2 class="nav_titulo">My Little Cine</h2>
+        <h2 class="nav-titulo">My Little Cine</h2>
+        <nav class="nav-container">
+            <a href="index_usuario.php" class="nav-logo">
+                <img src="imagens/home_icone.png" alt="Logo">
+            </a>
+            <?php if (isset($_SESSION["usuario"])): ?>
+                <a href="filmes.php" class="nav-link">Filmes</a>
+                <a href="logout.php" class="nav-link">Logout</a>
 
-        <nav class="nav_container">
-            <a href="index_usuario.php" class="nav_link">Página Inicial</a>
+                <?php if ($_SESSION["tipo"] == "admin"): ?>
+                    <a href="admin/index_admin.php" class="nav-link btn">Administração</a>
+                <?php endif; ?>
 
-            <a href="logout.php">Sair</a>
+            <?php else: ?>
+                <a href="login.php" class="nav-link btn">Login</a>
+                <a href="cadastrar.php" class="nav-link btn-negativo">Cadastro</a>
+            <?php endif; ?>
+            <a href="sobre.php" class="nav-link">Sobre</a>
         </nav>
     </header>
 

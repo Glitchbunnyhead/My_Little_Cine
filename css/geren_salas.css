@@ -1,0 +1,206 @@
+@import "variaveis.css";
+@import "estilo.css";
+
+/* Estilos específicos para a página de gerenciamento de usuários */
+main {
+    max-width: 1100px;
+    margin: var(--espacamento-8) auto;
+    padding: 0 var(--espacamento-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-6);
+    flex-grow: 1;
+}
+
+/* Mensagens de feedback (sucesso e erro) logo no topo do main */
+main > p {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--cor-secundaria);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    color: var(--cor-secundaria-clara);
+    font-size: var(--texto-sm);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: calc(var(--espacamento-4) * -1);
+}
+
+/* Seções principais (Formulário e Listagem) */
+main > section {
+    background-color: rgba(36, 30, 33, 0.85);
+    border: 3px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: var(--espacamento-6);
+    box-shadow: 6px 6px 0px var(--cor-primaria-escura);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-4);
+}
+
+/* Títulos das seções */
+main > section > h2 {
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    font-size: var(--texto-2xl);
+    color: var(--cor-secundaria);
+    text-shadow: 2px 2px var(--cor-primaria-escura);
+    border-bottom: 3px dashed var(--cor-primaria);
+    padding-bottom: var(--espacamento-3);
+    margin: 0 0 var(--espacamento-2) 0;
+}
+
+/* Estilização dos rótulos (labels) do formulário */
+main > section > form label {
+    font-size: var(--texto-sm);
+    font-weight: bold;
+    color: var(--cor-texto);
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    margin-bottom: var(--espacamento-1);
+}
+
+/* Campos de input do formulário */
+main > section > form input[type="text"],
+main > section > form input[type="number"] {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    padding: var(--espacamento-3);
+    color: var(--cor-texto);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--texto-sm);
+    width: 100%;
+    margin-bottom: var(--espacamento-3);
+    transition: var(--transicao);
+}
+
+main > section > form input:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 5px rgba(234, 196, 53, 0.3);
+}
+
+
+main > section > form br {
+    display: none;
+}
+
+/* Botão de Cadastrar / Salvar */
+main > section > form button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-weight: bold;
+    font-size: var(--texto-base);
+    font-family: var(--fonte-principal);
+    border: 2px solid var(--cor-primaria-clara);
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 3px 3px 0px var(--cor-primaria-escura);
+    width: 100%;
+    margin-top: var(--espacamento-2);
+}
+
+main > section > form button[type="submit"]:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+    border-color: var(--cor-secundaria-clara);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--cor-primaria);
+}
+
+/* Link de cancelar edição */
+main > section > form > a {
+    display: block;
+    text-align: center;
+    color: var(--cor-texto-muted);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--texto-sm);
+    margin-top: var(--espacamento-3);
+    text-decoration: none;
+}
+
+main > section > form > a:hover {
+    color: var(--cor-secundaria-clara);
+    text-decoration: underline;
+}
+
+/*Tabela */
+main > section > table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: var(--texto-sm);
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--cor-primaria-escura);
+    border-radius: var(--raio-sm);
+    overflow: hidden;
+}
+
+main > section > table th {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--cor-secundaria);
+    padding: var(--espacamento-3);
+    border-bottom: 2px solid var(--cor-primaria);
+    font-family: 'Pixelify Sans', monospace, sans-serif;
+    white-space: nowrap;
+}
+
+main > section > table td {
+    padding: var(--espacamento-3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--cor-texto);
+    vertical-align: middle;
+}
+
+main > section > table tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Links de Ação na Tabela  */
+main > section > table td > a {
+    display: inline-block;
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto);
+    padding: var(--espacamento-1) var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-size: var(--texto-xs);
+    font-family: var(--fonte-principal);
+    text-decoration: none;
+    border: 1px solid var(--cor-primaria);
+    transition: var(--transicao);
+    margin-right: 4px;
+}
+
+main > section > table td > a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+}
+
+/* Formulário de exclusão dentro da tabela */
+main > section > table td > form {
+    display: inline;
+}
+
+/* Botão de Excluir da tabela */
+main > section > table td > form > button[type="submit"] {
+    background-color: rgba(180, 40, 40, 0.3);
+    color: #ff9999;
+    padding: var(--espacamento-1) var(--espacamento-3);
+    border-radius: var(--raio-sm);
+    font-size: var(--texto-xs);
+    font-weight: bold;
+    font-family: var(--fonte-principal);
+    border: 1px solid #aa3333;
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+}
+
+main > section > table td > form > button[type="submit"]:hover {
+    background-color: #aa3333;
+    color: white;
+    transform: none;
+    box-shadow: none;
+}

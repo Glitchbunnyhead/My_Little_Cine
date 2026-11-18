@@ -1,24 +1,26 @@
+@import "variaveis.css";
 
+/* Estilos Específicos para a Página de Perfil */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    padding: var(--espacamento-6) var(--espacamento-4);
+    padding: var(--espacamento-8) var(--espacamento-4);
 }
 
 main section.perfil {
     width: 100%;
-    max-width: 500px;
+    max-width: 520px;
 }
 
-
+/* Card principal do perfil */
 .perfil_conteudo {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color:var(--cor-bg); 
     border: 3px solid var(--cor-primaria);
     border-radius: var(--raio-md);
     padding: var(--espacamento-8);
-    box-shadow: var(--sombra-md);
+    box-shadow: 6px 6px 0px var(--cor-primaria-escura); 
     display: flex;
     flex-direction: column;
     gap: var(--espacamento-6);
@@ -30,15 +32,16 @@ main section.perfil {
     color: var(--cor-secundaria);
     text-align: center;
     margin-bottom: var(--espacamento-2);
+    text-shadow: 2px 2px var(--cor-primaria-escura);
 }
 
-
+/* Caixa interna  */
 .perfil_info {
     display: flex;
     flex-direction: column;
-    gap: var(--espacamento-3);
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 2px dashed var(--cor-primaria-escura);
+    gap: var(--espacamento-2);
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px dashed var(--cor-primaria);
     border-radius: var(--raio-sm);
     padding: var(--espacamento-4);
 }
@@ -50,7 +53,7 @@ main section.perfil {
     font-size: var(--texto-sm);
     color: var(--cor-texto);
     padding: var(--espacamento-2) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .perfil_campo:last-child {
@@ -62,6 +65,7 @@ main section.perfil {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Área do botão de editar perfil */
 .perfil_botoes {
     display: flex;
     justify-content: center;
@@ -75,7 +79,8 @@ main section.perfil {
     padding: var(--espacamento-3);
     border-radius: var(--raio-sm);
     font-weight: bold;
-    font-size: var(--texto-sm);
+    font-size: var(--texto-base);
+    font-family: var(--fonte-principal);
     border: 2px solid var(--cor-primaria-clara);
     text-align: center;
     text-decoration: none;
@@ -88,6 +93,8 @@ main section.perfil {
     background-color: var(--cor-secundaria);
     color: var(--cor-primaria-escura);
     border-color: var(--cor-secundaria-clara);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--cor-primaria);
 }
 
 .perfil_botoes .botao:active {

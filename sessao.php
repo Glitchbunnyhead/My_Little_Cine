@@ -29,7 +29,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imagens/home_icone.png" type="image/png">
+    <link rel="icon" href="imagens/filmes-icone.png" type="image/png">
     <!-- Importando fonte -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,9 +101,9 @@
             <?php else: ?>
                 <p style="color: #b3b3b3;">Nenhum filme em cartaz no momento.</p>
             <?php endif; ?>   
-            <button onclick="history.back()">Voltar</button> 
+        <a href="filmes.php" class="btn-voltar">← Voltar</a>
     </main>
-
+    
     <footer>
         <img src="imagens/home_icone.png" alt="Icone">
         <p>© 2026 IFSUL MY LITTLE CINE</p>

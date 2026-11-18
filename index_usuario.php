@@ -58,11 +58,11 @@
 
     <main>
        <section class="hero">
-            <div class="hero-conteudo img">
+            <div class="hero-conteudo">
                 <h2>Bem-vindo ao My Little Cine</h2>
                 <p>O melhor lugar para assistir aos seus filmes favoritos!</p>
                 <div class="hero-imagem">
-                    <img src = "imagens/cinema.png">
+                    <img src = "imagens/movies].jpg">
                 </div>
             </div>
         </section>

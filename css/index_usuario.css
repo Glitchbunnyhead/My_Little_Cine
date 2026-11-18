@@ -1,32 +1,69 @@
 @import "variaveis.css";
 @import "estilo.css";
 
-/*HERO*/
+/* Estilos Específicos para a Home do Usuário */
+/* Hero */
 .hero {
     background: linear-gradient(135deg, var(--cor-primaria-escura), var(--cor-bg));
     border-bottom: 4px solid var(--cor-primaria);
-    padding: var(--espacamento-16) var(--espacamento-4);
+    padding: var(--espacamento-12) var(--espacamento-4);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-conteudo h2 {
     font-family: 'Press Start 2P', monospace, sans-serif;
-    font-size: var(--texto-xl);
+    font-size: var(--texto-2xl);
     color: var(--cor-secundaria);
     margin-bottom: var(--espacamento-4);
     line-height: 1.4;
+    text-shadow: 3px 3px var(--cor-primaria-escura);
 }
 
 .hero-conteudo p {
     font-size: var(--texto-lg);
     color: var(--cor-primaria-clara);
-    margin-bottom: var(--espacamento-6);
+    margin-bottom: var(--espacamento-8);
+}
+
+/* Moldura pixelada para a imagem do cinema no topo */
+.hero-imagem {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 3px solid var(--cor-secundaria);
+    border-radius: var(--raio-md);
+    background-color: var(--cor-primaria-escura);
+    padding: var(--espacamento-3);
+    box-shadow: 6px 6px 0px var(--cor-primaria);
 }
 
 .hero-imagem img {
-    width: 70% ;
-    height: 70% ;
+    width: 100%;
+    height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Cards de Filmes e Produtos */
+.card-filme, .card-produtos {
+    background-color: rgba(72, 6, 33, 0.2); 
+}
+
+/* Alinha os cards*/
+.card-info p {
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

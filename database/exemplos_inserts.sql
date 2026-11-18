@@ -56,14 +56,14 @@ INSERT INTO Assento (fileira, numero, tipo, id_sala, estado) VALUES
 ('C', 10, 'comum', 1, 'livre');
 
 INSERT INTO Sessao (data, horario, tipo, preco, status, id_filme, id_idioma, id_sala) VALUES
-('2026-06-10', '19:30:00', 'IMAX Dublado', 'em exibição', 1, 1, 1),
-('2026-06-10', '21:00:00', 'Legendado', 'em exibição', 2, 2, 2),
-('2026-06-11', '15:00:00', 'Dublado 2D', 'em exibição', 3, 1, 3);
+('2026-06-10', 45.00, '19:30:00', 'IMAX Dublado', 'em exibição', 1, 1, 1),
+('2026-06-10', 21.00, '21:00:00', 'Legendado', 'em exibição', 2, 2, 2),
+('2026-06-11', 15.00, '15:00:00', 'Dublado 2D', 'em exibição', 3, 1, 3);
 
-INSERT INTO Ingresso (tipo, preco, status, id_sessao, id_assento) VALUES
-('Inteira', 45.00, 'vendido', 1, 1),
-('Meia', 22.50, 'disponivel', 1, 2),
-('Inteira', 35.00, 'disponivel', 2, 3);
+INSERT INTO Ingresso (tipo, status, id_sessao, id_assento) VALUES
+('Inteira', 'vendido', 1, 1),
+('Meia', 'disponivel', 1, 2),
+('Inteira', 'disponivel', 2, 3);
 
 INSERT INTO CategoriaProduto (nome, descricao) VALUES
 ('Bebidas', 'Refrigerantes, sucos, água e chás'),

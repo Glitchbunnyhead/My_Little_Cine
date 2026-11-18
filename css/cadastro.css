@@ -1,22 +1,26 @@
+@import "variaveis.css";
+
+/* Estilos Específicos para a Página de Cadastro */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    padding: var(--espacamento-6) var(--espacamento-4);
+    padding: var(--espacamento-8) var(--espacamento-4);
 }
 
 main section {
     width: 100%;
-    max-width: 450px;
+    max-width: 480px; 
 }
 
+/* Card principal do cadastro */
 main section > div {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--cor-bg); 
     border: 3px solid var(--cor-primaria);
     border-radius: var(--raio-md);
     padding: var(--espacamento-8);
-    box-shadow: var(--sombra-md);
+    box-shadow: 6px 6px 0px var(--cor-primaria-escura); /* Sombra dura retro */
     display: flex;
     flex-direction: column;
     gap: var(--espacamento-6);
@@ -28,6 +32,7 @@ main section h2 {
     color: var(--cor-secundaria);
     text-align: center;
     margin-bottom: var(--espacamento-2);
+    text-shadow: 2px 2px var(--cor-primaria-escura);
 }
 
 form {
@@ -48,8 +53,10 @@ form {
     color: var(--cor-texto);
 }
 
-.formulario_grupo input {
-    background-color: rgba(0, 0, 0, 0.3);
+/* Estilização de inputs e selects */
+.formulario_grupo input,
+.formulario_grupo select {
+    background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid var(--cor-primaria-escura);
     border-radius: var(--raio-sm);
     padding: var(--espacamento-3);
@@ -57,41 +64,68 @@ form {
     font-family: 'Roboto', sans-serif;
     font-size: var(--texto-sm);
     transition: var(--transicao);
+    width: 100%;
 }
 
-.formulario_grupo input:focus {
+.formulario_grupo input:focus,
+.formulario_grupo select:focus {
     outline: none;
     border-color: var(--cor-secundaria);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(234, 196, 53, 0.3);
 }
 
 .formulario_grupo input::placeholder {
     color: var(--cor-texto-muted);
 }
 
+/* Estilo para as opções do select  */
+.formulario_grupo select option {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto);
+}
 
+/* Botões Cadastrar e Limpar*/
 .formulario_botoes {
+    display: flex;
+    gap: var(--espacamento-3);
     margin-top: var(--espacamento-2);
 }
 
 .formulario_botoes button {
-    width: 100%;
+    flex: 1; /* Divide o espaço igualmente entre os dois botões */
     background-color: var(--cor-primaria);
     color: var(--cor-texto);
     padding: var(--espacamento-3);
     border-radius: var(--raio-sm);
     font-weight: bold;
-    font-size: var(--texto-sm);
+    font-size: var(--texto-base);
+    font-family: var(--fonte-principal);
     border: 2px solid var(--cor-primaria-clara);
     cursor: pointer;
     transition: var(--transicao);
     box-shadow: 3px 3px 0px var(--cor-primaria-escura);
 }
 
+.formulario_botoes button[type="reset"] {
+    background-color: transparent;
+    border: 2px solid var(--cor-texto-muted);
+    color: var(--cor-texto-muted);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
+}
+
 .formulario_botoes button:hover {
     background-color: var(--cor-secundaria);
     color: var(--cor-primaria-escura);
     border-color: var(--cor-secundaria-clara);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--cor-primaria);
+}
+
+.formulario_botoes button[type="reset"]:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+    border-color: var(--cor-erro);
+    color: var(--cor-texto);
+    box-shadow: 5px 5px 0px var(--cor-primaria-escura);
 }
 
 .formulario_botoes button:active {
@@ -99,30 +133,31 @@ form {
     box-shadow: none;
 }
 
-.login_cadastro {
+/* Rodapé do card */
+.cadastro_login, .login_cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--espacamento-2);
     margin-top: var(--espacamento-2);
-    padding-top: var(--espacamento-4);
+    padding-top: var(--espacamento_4);
     border-top: 2px dashed var(--cor-primaria-escura);
     text-align: center;
     font-size: var(--texto-xs);
 }
 
-.login_cadastro p {
+.cadastro_login p, .login_cadastro p {
     color: var(--cor-texto-muted);
 }
 
-.login_cadastro a {
+.cadastro_login a, .login_cadastro a {
     color: var(--cor-secundaria);
     text-decoration: none;
     font-weight: bold;
     transition: var(--transicao);
 }
 
-.login_cadastro a:hover {
+.cadastro_login a:hover, .login_cadastro a:hover {
     text-decoration: underline;
     color: var(--cor-secundaria-clara);
 }

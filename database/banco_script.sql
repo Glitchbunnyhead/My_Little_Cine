@@ -84,7 +84,6 @@ FOREIGN KEY (id_sala) REFERENCES Sala(id_sala)
 CREATE TABLE Ingresso (
 id_ingresso BIGINT AUTO_INCREMENT PRIMARY KEY,
 tipo VARCHAR(40) NOT NULL,
-preco DECIMAL(10,2) NOT NULL,
 status VARCHAR(20) NOT NULL DEFAULT 'disponivel',
 id_sessao BIGINT NOT NULL,
 id_assento BIGINT NOT NULL,

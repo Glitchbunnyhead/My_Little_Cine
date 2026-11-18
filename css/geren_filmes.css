@@ -1,4 +1,4 @@
-
+/* Estilos específicos para a página de gerenciamento de filmes */
 main {
     max-width: 1000px;
     margin: var(--espacamento-6) auto;
@@ -22,7 +22,7 @@ main {
 }
 
 .admin_mensagem {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color:var(--cor-bg);
     border: 2px dashed var(--cor-secundaria);
     padding: var(--espacamento-3);
     border-radius: var(--raio-sm);
@@ -33,7 +33,7 @@ main {
 
 
 .admin_formulario {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color:var(--cor-bg);
     border: 3px solid var(--cor-primaria);
     border-radius: var(--raio-md);
     padding: var(--espacamento-6);
@@ -74,7 +74,7 @@ main {
 .formulario_grupo input[type="url"],
 .formulario_grupo select,
 .formulario_grupo textarea {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--cor-bg);
     border: 2px solid var(--cor-primaria-escura);
     border-radius: var(--raio-sm);
     padding: var(--espacamento-3);
@@ -152,7 +152,7 @@ main {
 }
 
 .admin_listagem {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--cor-bg);
     border: 3px solid var(--cor-primaria);
     border-radius: var(--raio-md);
     padding: var(--espacamento-6);
