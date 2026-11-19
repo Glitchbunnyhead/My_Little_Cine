@@ -1,7 +1,10 @@
 INSERT INTO Usuario (nome, email, senha, cpf, data_nascimento, tipo) VALUES
-('Carlos Silva', 'carlos.silva@email.com', 'senha123', '12345678901', '1995-05-10', 'cliente'),
-('Ana Souza', 'ana.souza@email.com', 'minhasenha', '98765432100', '1990-12-15', 'cliente'),
-('Admin Master', 'admin@cinema.com', 'admin123', '11122233344', '1985-03-20', 'administrador');
+('Corvo', 'corvo@email.com', 'corvo', '12345678901', '2008-08-18', 'administrador'),
+('Laura Barboza', 'laura@email.com', 'croche', '98765432100', '2008-05-16', 'administrador'),
+('Vitória Nepomuceno', 'vitoria@cinema.com', 'vitoria', '11122233355', '2008-10-20', 'administrador');
+('Isadora Ferrari', 'isadora@cinema.com', 'ferrari', '11122233344', '2009-12-24', 'administrador');
+('Fernanda Guedes', 'fernanda@email.com', 'fernanda', '121212122', '2000-02-01', 'cliente'),
+
 
 INSERT INTO Filme (titulo, sinopse, ano_lancamento, duracao_minutos, classificacao_etaria, poster) VALUES
 ('Duna: Parte 2', 'Paul Atreides se une a Chani e aos Fremen enquanto busca vingança contra os conspiradores que destruíram sua família.', 2024, 166, '14', 'https://upload.wikimedia.org/wikipedia/pt/5/52/Dune_Part_Two_poster.jpeg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original'),
@@ -54,6 +57,70 @@ INSERT INTO Assento (fileira, numero, tipo, id_sala, estado) VALUES
 ('C', 8, 'comum', 1, 'livre'),
 ('C', 9, 'comum', 1, 'livre'),
 ('C', 10, 'comum', 1, 'livre');
+
+INSERT INTO Assento (fileira, numero, tipo, id_sala, estado) VALUES
+('A', 1, 'comum', 2, 'livre'),
+('A', 2, 'comum', 2, 'livre'),
+('A', 3, 'comum', 2, 'livre'),
+('A', 4, 'comum', 2, 'livre'),
+('A', 5, 'comum', 2, 'livre'),
+('A', 6, 'comum', 2, 'livre'),
+('A', 7, 'comum', 2, 'livre'),
+('A', 8, 'comum', 2, 'livre'),
+('A', 9, 'comum', 2, 'livre'),
+('A', 10, 'comum', 2, 'livre'),
+('B', 1, 'comum', 2, 'livre'),
+('B', 2, 'comum', 2, 'livre'),
+('B', 3, 'comum', 2, 'livre'),
+('B', 4, 'comum', 2, 'livre'),
+('B', 5, 'comum', 2, 'livre'),
+('B', 6, 'comum', 2, 'livre'),
+('B', 7, 'comum', 2, 'livre'),
+('B', 8, 'comum', 2, 'livre'),
+('B', 9, 'comum', 2, 'livre'),
+('B', 10, 'comum', 2, 'livre'),
+('C', 1, 'comum', 2, 'livre'),
+('C', 2, 'comum', 2, 'livre'),
+('C', 3, 'comum', 2, 'livre'),
+('C', 4, 'comum', 2, 'livre'),
+('C', 5, 'comum', 2, 'livre'),
+('C', 6, 'comum', 2, 'livre'),
+('C', 7, 'comum', 2, 'livre'),
+('C', 8, 'comum', 2, 'livre'),
+('C', 9, 'comum', 2, 'livre'),
+('C', 10, 'comum', 2, 'livre');
+
+INSERT INTO Assento (fileira, numero, tipo, id_sala, estado) VALUES
+('A', 1, 'comum', 3, 'livre'),
+('A', 2, 'comum', 3, 'livre'),
+('A', 3, 'comum', 3, 'livre'),
+('A', 4, 'comum', 3, 'livre'),
+('A', 5, 'comum', 3, 'livre'),
+('A', 6, 'comum', 3, 'livre'),
+('A', 7, 'comum', 3, 'livre'),
+('A', 8, 'comum', 3, 'livre'),
+('A', 9, 'comum', 3, 'livre'),
+('A', 10, 'comum', 3, 'livre'),
+('B', 1, 'comum', 3, 'livre'),
+('B', 2, 'comum', 3, 'livre'),
+('B', 3, 'comum', 3, 'livre'),
+('B', 4, 'comum', 3, 'livre'),
+('B', 5, 'comum', 3, 'livre'),
+('B', 6, 'comum', 3, 'livre'),
+('B', 7, 'comum', 3, 'livre'),
+('B', 8, 'comum', 3, 'livre'),
+('B', 9, 'comum', 3, 'livre'),
+('B', 10, 'comum', 3, 'livre'),
+('C', 1, 'comum', 3, 'livre'),
+('C', 2, 'comum', 3, 'livre'),
+('C', 3, 'comum', 3, 'livre'),
+('C', 4, 'comum', 3, 'livre'),
+('C', 5, 'comum', 3, 'livre'),
+('C', 6, 'comum', 3, 'livre'),
+('C', 7, 'comum', 3, 'livre'),
+('C', 8, 'comum', 3, 'livre'),
+('C', 9, 'comum', 3, 'livre'),
+('C', 10, 'comum', 3, 'livre');
 
 INSERT INTO Sessao (data, horario, tipo, preco, status, id_filme, id_idioma, id_sala) VALUES
 ('2026-06-10', 45.00, '19:30:00', 'IMAX Dublado', 'em exibição', 1, 1, 1),
