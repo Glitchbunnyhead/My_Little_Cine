@@ -79,7 +79,7 @@ if(!$usuario) {
 </head>
 <body>
     <header>
-    <h2 class="nav-titulo">My Little Cine</h2>
+        <h2 class="nav-titulo">My Little Cine</h2>
          
             <a href="index_usuario.php" class="nav-logo">
                 <img src="imagens/home_icone.png" alt="Logo">

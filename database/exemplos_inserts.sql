@@ -122,7 +122,7 @@ INSERT INTO Assento (fileira, numero, tipo, id_sala, estado) VALUES
 ('C', 9, 'comum', 3, 'livre'),
 ('C', 10, 'comum', 3, 'livre');
 
-INSERT INTO Sessao (data, horario, tipo, preco, status, id_filme, id_idioma, id_sala) VALUES
+INSERT INTO Sessao (data, preco, horario, tipo, status, id_filme, id_idioma, id_sala) VALUES
 ('2026-06-10', 45.00, '19:30:00', 'IMAX Dublado', 'em exibição', 1, 1, 1),
 ('2026-06-10', 21.00, '21:00:00', 'Legendado', 'em exibição', 2, 2, 2),
 ('2026-06-11', 15.00, '15:00:00', 'Dublado 2D', 'em exibição', 3, 1, 3);
